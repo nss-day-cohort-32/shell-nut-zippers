@@ -11,6 +11,9 @@ import NewsCard from "./news/NewsCard"
 import TasksCard from "./tasks/TasksCard"
 import TasksNewForm from "./tasks/TasksNewForm"
 import TasksEditForm from "./tasks/TasksEditForm"
+import NewNewsForm from "./news/NewsNewForm"
+import NewsEditForm from "./news/NewsEditForm"
+
 
 
 export default class AppViews extends Component {
@@ -91,6 +94,33 @@ export default class AppViews extends Component {
             .then(tasks => {
                 this.setState({
                     tasks: tasks
+                })
+            });
+    };
+
+    addNews = (news) =>
+        DbCalls.postNewNews(news)
+            .then(() => DbCalls.getAllNews())
+            .then(news =>
+                this.setState({
+                    news: news
+                })
+            );
+
+    deleteNews = (id) => {
+        const newState = {};
+        DbCalls.deleteNews(id)
+            .then(DbCalls.getAllNews)
+            .then(news => { newState.news = news })
+            .then(() => this.setState(newState))
+    };
+
+    putNews = (editedNewsObject) => {
+        return DbCalls.putNews(editedNewsObject)
+            .then(() => DbCalls.getAllNews())
+            .then(news => {
+                this.setState({
+                    news: news
                 })
             });
     };
@@ -225,6 +255,26 @@ export default class AppViews extends Component {
                         }
                     }
                     } />
+                }/>
+                <Route path="/news/new"
+                    render={(props) => {
+                        return <NewNewsForm {
+                            ...props
+                        }
+                            News={this.state.news}
+                            addNews={this.addNews} />
+                    }
+                    } />
+                <Route path="/news/:newsId(\d+)/edit"
+                    render={props => {
+                        return <NewsEditForm {
+                            ...props
+                        }
+                            news={this.state.news}
+                            putNews={this.putNews} />
+                    }
+                    } />
+
 
 
                 <Route path="/login"
