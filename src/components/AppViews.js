@@ -6,6 +6,7 @@ import EventsCard from "./events/EventsCard"
 import EventsNewForm from "./events/EventsNewForm"
 import EventsEditForm from "./events/EventsEditForm"
 import NewsCard from "./news/NewsCard"
+import TasksCard from "./tasks/TasksCard"
 
 
 export default class AppViews extends Component {
@@ -21,20 +22,19 @@ export default class AppViews extends Component {
 
     addEvent = (event) =>
         DbCalls.postNewEvents(event)
-        .then(() => DbCalls.getAllEvents())
-        .then(events =>
-            this.setState({
-            events: events
-        })
-    );
+            .then(() => DbCalls.getAllEvents())
+            .then(events =>
+                this.setState({
+                    events: events
+                })
+            );
 
     deleteEvents = (id) => {
         const newState = {};
         DbCalls.deleteEvents(id)
-        .then(DbCalls.getAllEvents)
-        .then(events => 
-            {newState.events = events})
-        .then(() => this.setState(newState))
+            .then(DbCalls.getAllEvents)
+            .then(events => { newState.events = events })
+            .then(() => this.setState(newState))
     };
 
     putEvents = (editedEventObject) => {
@@ -52,90 +52,90 @@ export default class AppViews extends Component {
         const newState = {}
 
         DbCalls.getAllUsers()
-        .then(users => newState.users = users)
-        
-
-        .then(() => DbCalls.getAllNews())
-        .then(news => newState.news = news)
-
-        
-        .then(() => DbCalls.getAllEvents())
-        .then(events => newState.events = events)
-        
-
-        .then(() => DbCalls.getAllTasks())
-        .then(tasks => newState.tasks = tasks)
-        
-
-        .then(() => DbCalls.getAllMessages())
-        .then(messages => newState.messages = messages)
+            .then(users => newState.users = users)
 
 
-        .then(() => this.setState(newState))
+            .then(() => DbCalls.getAllNews())
+            .then(news => newState.news = news)
+
+
+            .then(() => DbCalls.getAllEvents())
+            .then(events => newState.events = events)
+
+
+            .then(() => DbCalls.getAllTasks())
+            .then(tasks => newState.tasks = tasks)
+
+
+            .then(() => DbCalls.getAllMessages())
+            .then(messages => newState.messages = messages)
+
+
+            .then(() => this.setState(newState))
 
     };
-    
+
     isAuthenticated = () => sessionStorage.getItem("credentials") !== null
 
     render() {
         return (
             <React.Fragment >
-                <Route exact path = "/login"
-                render = {(props) => {
+                <Route exact path="/login"
+                    render={(props) => {
                         if (!this.isAuthenticated()) {
-                            return 
-    
-                        } 
+                            return
+
+                        }
                     }
-                }/>
-                <Route exact path = "/events"
-                render = {(props) => {
+                    } />
+                <Route exact path="/events"
+                    render={(props) => {
                         if (this.isAuthenticated()) {
                             return <EventsCard {
                                 ...props
                             }
-                            events = {this.state.events}
-                            deleteEvents = {this.deleteEvents}/>
+                                events={this.state.events}
+                                deleteEvents={this.deleteEvents} />
                         } else {
-                            return <Redirect to = "/login" />
+                            return <Redirect to="/login" />
                         }
                     }
-                }/>
-                <Route path = "/events/new"
-                render = {(props) => {
+                    } />
+                <Route path="/events/new"
+                    render={(props) => {
                         return <EventsNewForm {
                             ...props
                         }
-                        events = {this.state.events}
-                        addEvent = {this.addEvent}/>
+                            events={this.state.events}
+                            addEvent={this.addEvent} />
                     }
-                }/>
-                <Route path = "/events/:eventId(\d+)/edit"
-                render = {props => {
+                    } />
+                <Route path="/events/:eventId(\d+)/edit"
+                    render={props => {
                         return <EventsEditForm {
                             ...props
                         }
-                        events = {this.state.events}
-                        putEvents = {this.putEvents}/>
+                            events={this.state.events}
+                            putEvents={this.putEvents} />
                     }
-                }/>
-                <Route exact path = "/news"
-                render = {(props) => {
+                    } />
+                <Route exact path="/news"
+                    render={(props) => {
                         if (this.isAuthenticated()) {
                             return <NewsCard {
                                 ...props
                             }
-                            news = {this.state.news}
-                            deleteNews = {this.deleteNews}/>
+                                news={this.state.news}
+                                deleteNews={this.deleteNews} />
                         } else {
-                            return <Redirect to = "/login" />
+                            return <Redirect to="/login" />
                         }
                     }
-                }/>
+                    } />
 
 
-                <Route path = "/login"
-                component = {Login}/>
+                <Route path="/login"
+                    component={Login} />
 
             </React.Fragment>
         )
