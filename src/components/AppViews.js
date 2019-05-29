@@ -7,6 +7,8 @@ import EventsNewForm from "./events/EventsNewForm"
 import EventsEditForm from "./events/EventsEditForm"
 import NewsCard from "./news/NewsCard"
 import TasksCard from "./tasks/TasksCard"
+import TasksNewForm from "./tasks/TasksNewForm"
+import TasksEditForm from "./tasks/TasksEditForm"
 
 
 export default class AppViews extends Component {
@@ -43,6 +45,32 @@ export default class AppViews extends Component {
             .then(events => {
                 this.setState({
                     events: events
+                })
+            });
+    };
+    addTask = (task) =>
+        DbCalls.postNewTasks(task)
+            .then(() => DbCalls.getAllTasks())
+            .then(tasks =>
+                this.setState({
+                    tasks: tasks
+                })
+            );
+
+    deleteTasks = (id) => {
+        const newState = {};
+        DbCalls.deleteTasks(id)
+            .then(DbCalls.getAllTasks)
+            .then(tasks => { newState.tasks = tasks })
+            .then(() => this.setState(newState))
+    };
+
+    putTasks = (editedTasks) => {
+        return DbCalls.putTasks(editedTasks)
+            .then(() => DbCalls.getAllTasks())
+            .then(tasks => {
+                this.setState({
+                    tasks: tasks
                 })
             });
     };

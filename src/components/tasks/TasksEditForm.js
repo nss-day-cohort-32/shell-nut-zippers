@@ -32,10 +32,10 @@ export default class TasksEditForm extends Component {
 
     componentDidMount() {
         DbCalls.getTasks(this.props.match.params.eventId)
-            .then(event => {
+            .then(task => {
                 this.setState({
-                    taskName: tasks.taskName,
-                    completeDate: tasks.completeDate
+                    taskName: task.taskName,
+                    completeDate: task.completeDate
                 });
             });
     };

@@ -19,7 +19,7 @@ export default class TaskCard extends Component {
 
                 <section className="TaskCard">
                     {
-                        this.props.tasks.map(event =>
+                        this.props.tasks.map(task =>
                             <div key={task.id}>
                                 {task.taskName}
                                 <br></br>
