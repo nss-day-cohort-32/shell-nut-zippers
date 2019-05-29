@@ -6,6 +6,9 @@ import EventsCard from "./events/EventsCard"
 import EventsNewForm from "./events/EventsNewForm"
 import EventsEditForm from "./events/EventsEditForm"
 import NewsCard from "./news/NewsCard"
+import NewNewsForm from "./news/NewsNewForm"
+import NewsEditForm from "./news/NewsEditForm"
+
 
 
 export default class AppViews extends Component {
@@ -46,6 +49,34 @@ export default class AppViews extends Component {
                 })
             });
     };
+ 
+    addNews = (news) =>
+    DbCalls.postNewNews(news)
+    .then(() => DbCalls.getAllNews())
+    .then(news =>
+        this.setState({
+        news: news
+    })
+);
+
+deleteNews = (id) => {
+    const newState = {};
+    DbCalls.deleteNews(id)
+    .then(DbCalls.getAllNews)
+    .then(news => 
+        {newState.news = news})
+    .then(() => this.setState(newState))
+};
+
+putNews = (editedNewsObject) => {
+    return DbCalls.putNews(editedNewsObject)
+        .then(() => DbCalls.getAllNews())
+        .then(news => {
+            this.setState({
+                news: news
+            })
+        });
+};
 
     componentDidMount() {
         console.log("didmount");
@@ -132,6 +163,25 @@ export default class AppViews extends Component {
                         }
                     }
                 }/>
+                <Route path = "/news/new"
+                render = {(props) => {
+                        return <NewNewsForm {
+                            ...props
+                        }
+                        News = {this.state.news}
+                        addNews = {this.addNews}/>
+                    }
+                }/>
+                <Route path = "/news/:newsId(\d+)/edit"
+                render = {props => {
+                        return <NewsEditForm {
+                            ...props
+                        }
+                        news = {this.state.news}
+                        putNews = {this.putNews}/>
+                    }
+                }/>
+
 
 
                 <Route path = "/login"
