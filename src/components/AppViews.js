@@ -7,6 +7,7 @@ import DbCalls from "./DbCalls";
 import EventsCard from "./events/EventsCard"
 import EventsNewForm from "./events/EventsNewForm"
 import EventsEditForm from "./events/EventsEditForm"
+import NewsCard from "./news/NewsCard"
 
 
 export default class AppViews extends Component {
@@ -124,7 +125,20 @@ export default class AppViews extends Component {
                         events = {this.state.events}
                         putEvents = {this.putEvents}/>
                     }
-                }/> 
+                }/>
+                <Route exact path = "/news"
+                render = {(props) => {
+                        if (this.isAuthenticated()) {
+                            return <NewsCard {
+                                ...props
+                            }
+                            news = {this.state.news}
+                            deleteNews = {this.deleteNews}/>
+                        } else {
+                            return <Redirect to = "/login" />
+                        }
+                    }
+                }/>
 
 
                 <Route path = "/login"
