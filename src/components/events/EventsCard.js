@@ -21,11 +21,11 @@ export default class EventsCard extends Component {
                        this.props.events.map(event =>
                         <div key={event.id}>
                             {event.eventName}
-                            {" "}
+                            <br></br>
                             {event.eventDate}
-                            {" "}
+                            <br></br>
                             {event.eventLocation}
-
+                            <br></br>
                         <button
                             type="button"
                             className="btn btn-success"
