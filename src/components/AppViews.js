@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Route, Redirect } from 'react-router-dom'
 import Login from "./login/LoginForm"
 import FriendsCard from "./friends/FriendsCard"
-import NewFriendsForm from "./friends/FriendsNewForm"
+import FriendsNewForm from "./friends/FriendsNewForm"
 import DbCalls from "./DbCalls";
 import EventsCard from "./events/EventsCard"
 import EventsNewForm from "./events/EventsNewForm"
@@ -31,6 +31,15 @@ export default class AppViews extends Component {
         })
     );
 
+    addFriend = (friend) =>
+        DbCalls.postNewFriends(friend)
+        .then(() => DbCalls.getAllFriends())
+        .then(friends =>
+            this.setState({
+                friends: friends
+            })
+        );
+
     deleteEvents = (id) => {
         const newState = {};
         DbCalls.deleteEvents(id)
@@ -39,6 +48,15 @@ export default class AppViews extends Component {
             {newState.events = events})
         .then(() => this.setState(newState))
     };
+
+    deleteFriend = (id) => {
+        const newState = {};
+        DbCalls.deleteFriends(id)
+        .then(DbCalls.getAllFriends)
+        .then(friends =>
+            {newState.friends = friends})
+        .then(() => this.setState(newState))
+    }
 
     putEvents = (editedEventObject) => {
         return DbCalls.putEvents(editedEventObject)
@@ -144,10 +162,23 @@ export default class AppViews extends Component {
                 <Route path = "/login"
                 component = {Login}/>
 
-                <Route path = "/friends"
+                <Route exact path = "/friends"
                 render = {(props) => {
-                    return <FriendsCard friends = {this.state.friends} />;
+                    return <FriendsCard friends = {this.state.friends} {
+                        ...props
+                    } />;
                 }
+                }/>
+
+                <Route path = "/friends/search"
+                render = {(props) => {
+                    return <FriendsNewForm {
+                    ...props
+                    }
+                        friends = {this.state.friends}
+                        addFriend = {this.state.addFriend}/>
+
+                    }
                 }/>
 
             </React.Fragment>

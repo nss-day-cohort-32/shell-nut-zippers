@@ -4,20 +4,41 @@ import DbCalls from "../DbCalls"
 export default class FriendsCard extends Component {
 
 
-        render() {
-        console.log("FriendsCard")
-        console.log("users", this.props.friends)
-        return this.props.friends.map(friend => (
+    render() {
+        return (
+            <React.Fragment>
+            <div className="FriendsButton">
+                <button type="button"
+                    className="btn btn-success"
+                    onClick={() => {
+                        this.props.history.push("/friends/search")
+                    }
+                    }>
+                    Add New Friend
+                </button>
+            </div>
 
-            <div key={friend.id}> {friend.addedUser} Is a Friend</div>
-        )
+            <section className="FriendsCard">
+                   {
+                       this.props.friends.map(friend =>
+                        <div key={friend.id}>
+                            {friend.addedUser}
+                            <br></br>
 
+                        <button className="btn btn-primary"
+                                onClick={() => this.props.deleteFriends(friend.id)}
+                                >Delete Friend</button>
+                        </div>
+                       )
+                   }
+               </section>
+            </React.Fragment>
         )
     }
 }
 
 
-
+//make button route to friendsnewform using history.push method
 
 //        return (
 //           <React.Fragment>
@@ -35,4 +56,15 @@ export default class FriendsCard extends Component {
 //           </React.Fragment>
 //        )
 //    }
+// }
+
+// render() {
+
+//     console.log("users", this.props.friends)
+//     return this.props.friends.map(friend => (
+
+//         <div key={friend.id}> {friend.addedUser} Is a Friend</div>
+//     )
+
+//     )
 // }
