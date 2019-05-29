@@ -24,9 +24,9 @@
   "news": [
     {
       "id": 5,
-      "title": "news-title",
-      "synopsis": "news-synopsis",
-      "url": "url"
+      "newsTitle": "Hello World",
+      "newsSynopsis": "Here is the synopsis",
+      "newsUrl": "Here is the URL"
     }
   ],
   "events": [
