@@ -52,7 +52,7 @@ export default class AppViews extends Component {
                 <Route exact path = "/login"
                 render = {(props) => {
                         if (!this.isAuthenticated()) {
-                            return
+                            return 
     
                         } 
                     }
