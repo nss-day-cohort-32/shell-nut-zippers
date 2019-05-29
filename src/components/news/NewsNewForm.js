@@ -64,19 +64,19 @@ export default class NewsNewForm extends Component {
             
           </div>
           <div className="form-group">
-            <label htmlFor="EventLocation">Event Location</label>
+            <label htmlFor="NewsUrl">News Url</label>
             <input
               type="text"
               required
               className="form-control"
               onChange={this.handleFieldChange}
-              id="eventLocation"
-              placeholder="Event Location"
+              id="NewsUrl"
+              placeholder="News Url"
             />
           </div>
           <button
             type="submit"
-            onClick={this.constructNewEvent}
+            onClick={this.constructNewNews}
             className="btn btn-primary">
             Submit
           </button>
