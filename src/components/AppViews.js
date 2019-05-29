@@ -17,7 +17,8 @@ export default class AppViews extends Component {
         events: [],
         tasks: [],
         forum: [],
-        users: []
+        users: [],
+        friends: []
     };
 
     addEvent = (event) =>
@@ -70,6 +71,9 @@ export default class AppViews extends Component {
 
         .then(() => DbCalls.getAllMessages())
         .then(messages => newState.messages = messages)
+
+        .then(() => DbCalls.getAllFriends())
+        .then(friends => newState.friends = friends)
 
 
         .then(() => this.setState(newState))
@@ -128,7 +132,7 @@ export default class AppViews extends Component {
 
                 <Route path = "/friends"
                 render = {(props) => {
-                    return <FriendsCard friends = {this.state.users} />;
+                    return <FriendsCard friends = {this.state.friends} />;
                 }
                 }/>
 

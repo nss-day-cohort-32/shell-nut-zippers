@@ -6,10 +6,10 @@ export default class FriendsCard extends Component {
 
         render() {
         console.log("FriendsCard")
-        console.log("users", this.props.users)
-        return this.props.users.map(user => (
+        console.log("users", this.props.friends)
+        return this.props.friends.map(friend => (
 
-            <div key={user.id}>Hello {user.name}</div>
+            <div key={friend.id}> {friend.addedUser} Is a Friend</div>
         )
 
         )
