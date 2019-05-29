@@ -1,59 +1,47 @@
 {
-
-    "users": [
-        {
-            "id": 1,
-            "name": "Matthew",
-            "email": "user@email.com",
-            "password": "password"
-        },
-        {
-            "id": 2,
-            "name": "Jake",
-            "email": "user@email.com",
-            "password": "password"
-        }
-    ],
-
-    "friends": [
-        {
-            "id": 33,
-            "currentUser": "Matthew",
-            "addedUser": "Ellie"
-        }
-    ],
-
-    "forum": [
-        {
-            "id": 3,
-            "userPosted": "Jimmy",
-            "message": "....."
-        }
-    ],
-
-    "news": [
-        {
-            "id": 5,
-            "title": "news-title",
-            "synopsis": "news-synopsis",
-            "url": "url"
-        }
-    ],
-
-    "events": [
-        {
-            "id": 100,
-            "eventName": "event-name",
-            "date": "event-date",
-            "location": "event-location"
-        }
-    ],
-
-    "tasks": [
-        {
-            "id": 65,
-            "taskName": "task-name",
-            "completeDate": "task-date"
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "Matthew",
+      "email": "user@email.com",
+      "password": "password"
+    }
+  ],
+  "friends": [
+    {
+      "id": 33,
+      "currentUser": "Matthew",
+      "addedUser": "Ellie"
+    }
+  ],
+  "forum": [
+    {
+      "id": 3,
+      "userPosted": "Jimmy",
+      "message": "....."
+    }
+  ],
+  "news": [
+    {
+      "id": 5,
+      "title": "news-title",
+      "synopsis": "news-synopsis",
+      "url": "url"
+    }
+  ],
+  "events": [
+    {
+      "id": 103,
+      "eventName": "Birthday",
+      "eventDate": "2019-05-09",
+      "eventLocation": "Knoxville"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 65,
+      "taskName": "task-name",
+      "completeDate": "task-date"
+    }
+  ]
 }
