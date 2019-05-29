@@ -147,6 +147,37 @@ export default class AppViews extends Component {
                             putEvents={this.putEvents} />
                     }
                     } />
+                <Route exact path="/tasks"
+                    render={(props) => {
+                        if (this.isAuthenticated()) {
+                            return <TasksCard {
+                                ...props
+                            }
+                                tasks={this.state.tasks}
+                                deleteTasks={this.deleteTasks} />
+                        } else {
+                            return <Redirect to="/login" />
+                        }
+                    }
+                    } />
+                <Route path="/tasks/new"
+                    render={(props) => {
+                        return <TasksNewForm {
+                            ...props
+                        }
+                            tasks={this.state.tasks}
+                            addTasks={this.addTasks} />
+                    }
+                    } />
+                <Route path="/tasks/:taskId(\d+)/edit"
+                    render={props => {
+                        return <TasksEditForm {
+                            ...props
+                        }
+                            tasks={this.state.tasks}
+                            putTasks={this.putTasks} />
+                    }
+                    } />
                 <Route exact path="/news"
                     render={(props) => {
                         if (this.isAuthenticated()) {
