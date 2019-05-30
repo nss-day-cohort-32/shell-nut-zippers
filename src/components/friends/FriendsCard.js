@@ -3,6 +3,7 @@ import DbCalls from "../DbCalls"
 import "./Friends.css"
 import UserIcon from "./UserIcon.svg"
 
+
 export default class FriendsCard extends Component {
 
 
@@ -30,7 +31,7 @@ export default class FriendsCard extends Component {
                                 <br></br>
                                 <br></br>
                                 <button className="btn btn-primary"
-                                    onClick={() => this.props.deleteFriends(friend.id)}
+                                    onClick={() => this.props.deleteFriend(friend.id)}
                                 >Delete Friend</button>
                             </div>
                         )
