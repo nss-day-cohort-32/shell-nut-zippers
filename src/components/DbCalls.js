@@ -76,7 +76,7 @@ export default {
       body: JSON.stringify(newTasks)
     }).then(e => e.json())
   },
-  putTasks(editedTasks) {
+  putTask(editedTasks) {
     return fetch(`${remoteURL}/tasks/${editedTasks.id}`, {
       method: "PUT",
       headers: {
