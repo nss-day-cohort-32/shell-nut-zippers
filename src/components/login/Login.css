@@ -1,0 +1,13 @@
+.LoginForm {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 2em;
+    margin: 4em;
+    border-style: outset;
+    background-color: white;
+}
+
+.NutshellTitle {
+    display: flex;
+}

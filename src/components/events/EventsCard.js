@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import "./Events.css"
 
 
 export default class EventsCard extends Component {
@@ -19,12 +20,13 @@ export default class EventsCard extends Component {
                <section className="EventsCard">
                    {
                        this.props.events.map(event =>
-                        <div key={event.id}>
+                        <div key={event.id} className="EventsBorderCard">
                             {event.eventName}
                             <br></br>
                             {event.eventDate}
                             <br></br>
                             {event.eventLocation}
+                            <br></br>
                             <br></br>
                         <button
                             type="button"
@@ -33,7 +35,6 @@ export default class EventsCard extends Component {
                                     this.props.history.push(`/events/${event.id}/edit`);
                             }}>
                             Edit</button>
-                            <br></br>
                         <button className="btn btn-primary"
                                 onClick={() => this.props.deleteEvents(event.id)}
                                 >Delete</button>

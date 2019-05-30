@@ -30,27 +30,29 @@ export default class Login extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleLogin}>
-                <h1 className="h3 mb-3 font-weight-normal">Welcome to Nutshell!</h1>
+            <form onSubmit={this.handleLogin}
+            className="LoginForm">
+                <h1 className="NutshellTitle">Welcome to Nutshell!</h1>
                 <label htmlFor="inputEmail">
-                    Email address
+                    Email address:
                 </label>
                 <input onChange={this.handleFieldChange} type="email"
                        id="email"
-                       placeholder="Email address"
+                       placeholder=""
                        required="" autoFocus="" />
                        <br></br>
                 <label htmlFor="inputPassword">
-                    Password
+                    Password:
                 </label>
                 <input onChange={this.handleFieldChange} type="password"
                        id="password"
-                       placeholder="Password"
+                       placeholder=""
                        required="" />
                        <br></br>
                 <button type="submit"
-                className="btn btn-primary LoginSubmit">
-                    Sign in
+                className="btn btn-primary LoginSubmit"
+                    >
+                    Sign In
                 </button>
             </form>
         )

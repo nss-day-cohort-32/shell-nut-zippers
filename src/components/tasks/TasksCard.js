@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import "./Tasks.css"
 
 
 export default class TaskCard extends Component {
@@ -20,10 +21,11 @@ export default class TaskCard extends Component {
                 <section className="TaskCard">
                     {
                         this.props.tasks.map(task =>
-                            <div key={task.id}>
+                            <div key={task.id} className="TasksBorderCard">
                                 {task.taskName}
                                 <br></br>
                                 {task.completeDate}
+                                <br></br>
                                 <br></br>
                                 <button
                                     type="button"

@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import DbCalls from "../DbCalls"
+import "./Forum.css"
 
 export default class ForumEditForm extends Component {
     state = {
@@ -47,7 +48,6 @@ export default class ForumEditForm extends Component {
                 <br></br>
                 <form className="ForumEditForm">
                 <div className="form-group">
-                    <h4> Edit Your Message Below </h4>
                 <label htmlFor="userPosted">User</label>
                 <input type="text"
                 required
@@ -71,7 +71,7 @@ export default class ForumEditForm extends Component {
           <button
             type="submit"
             onClick={this.updateExistingMessage}
-            className="btn btn-primary">
+            className="btn btn-primary ForumEditButton">
             Save Changes
           </button>
           </form>

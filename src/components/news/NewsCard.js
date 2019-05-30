@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-
+import "./News.css"
 
 export default class NewsCard extends Component {
     render() {
@@ -19,7 +19,7 @@ export default class NewsCard extends Component {
                <section className="NewsCard">
                    {
                        this.props.news.map(news =>
-                        <div key={news.id}>
+                        <div key={news.id} className="NewsBorderCard">
                             {news.newsTitle}
                             <br></br>
                             {news.newsSynopsis}
@@ -33,7 +33,6 @@ export default class NewsCard extends Component {
                                     this.props.history.push(`/news/${news.id}/edit`);
                             }}>
                             Edit</button>
-                            <br></br>
                         <button className="btn btn-primary"
                                 onClick={() => this.props.deleteNews(news.id)}
                                 >Delete</button>

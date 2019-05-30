@@ -1,0 +1,24 @@
+.EventsBorderCard {
+    border-style: outset;
+    padding: 2em;
+    background-color: white;
+}
+
+.EventsCard {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 2em;
+}
+.EventsButton {
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+}
+
+.EventsForm {
+    display: flex;
+    justify-content: center;
+    border-style: outset;
+    padding: 2em;
+    background-color: white;
+}

@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import DbCalls from "../DbCalls"
+import "./Friends.css"
+import UserIcon from "./UserIcon.svg"
 
 export default class FriendsCard extends Component {
 
@@ -21,10 +23,12 @@ export default class FriendsCard extends Component {
                 <section className="FriendsCard">
                     {
                         this.props.friends.map(friend =>
-                            <div key={friend.id}>
+                            <div key={friend.id} className="FriendsBorderCard"> 
+                            <img src={UserIcon} alt="User" className="FriendIcon"/>
+                                <br></br>
                                 {friend.addedUser}
                                 <br></br>
-
+                                <br></br>
                                 <button className="btn btn-primary"
                                     onClick={() => this.props.deleteFriends(friend.id)}
                                 >Delete Friend</button>

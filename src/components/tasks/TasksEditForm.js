@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import DbCalls from "../DbCalls"
+import "./Tasks.css"
 
 export default class TasksEditForm extends Component {
     state = {
@@ -43,7 +44,7 @@ export default class TasksEditForm extends Component {
     render() {
         return (
             <React.Fragment>
-                <form className="TaskForm">
+                <form className="TasksForm">
                     <div className="form-group">
                         <label htmlFor="taskName">Task Name</label>
                         <input

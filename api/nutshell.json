@@ -24,6 +24,16 @@
       "userPosted": "Ellie",
       "message": "Whats Up!!!",
       "id": 2
+    },
+    {
+      "userPosted": "Jimmy",
+      "message": "Hello Nutshell",
+      "id": 3
+    },
+    {
+      "userPosted": "Ellie",
+      "message": "HEllo",
+      "id": 4
     }
   ],
   "news": [
@@ -44,6 +54,12 @@
       "newsTitle": "The 100 absolute best songs in history",
       "newsSynopsis": "100. \"Kung Fu Fighting\" • Artist: Carl Douglas • Year: 1974 • Total weeks on Billboard Hot 100: 18 • ",
       "newsUrl": ""
+    },
+    {
+      "newsTitle": "Hello",
+      "newsSynopsis": "News",
+      "newsUrl": "",
+      "id": 10
     }
   ],
   "events": [

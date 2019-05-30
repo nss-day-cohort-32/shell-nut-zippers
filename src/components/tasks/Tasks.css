@@ -1,0 +1,26 @@
+.TaskCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 2em;
+}
+
+.TaskButton {
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+}
+
+.TasksBorderCard {
+    border-style: outset;
+    padding: 2em;
+    background-color: white;
+}
+
+.TasksForm {
+    display: flex;
+    justify-content: center;
+    border-style: outset;
+    padding: 2em;
+    background-color: white;
+}

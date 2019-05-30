@@ -1,19 +1,37 @@
 
 .NewForumForm {
     display: flex;
-    position: fixed;
-    bottom: 0;
-    background-color: white;
-    margin: 5px;
+    justify-content: center;
     border-style: outset;
+    padding: 1em;
+    margin: 1em;
+    background-color: white;
 }
 
 .ForumCard {
     display: flex;
-    background-color: rgb(204, 229, 255);
     flex-direction: column;
     justify-content: right;
     flex: 1;
+    padding: 1em;
     margin: 5px;
 }
 
+.ForumEditForm {
+    display: flex;
+    justify-content: center;
+    border-style: outset;
+    padding: 2em;
+    background-color: white;
+}
+
+.ForumHistory {
+    border-bottom: 1px solid gray;
+    padding: 2em;
+    background-color: rgb(204, 229, 255);
+}
+
+.ForumUser {
+    text-decoration-line: underline;
+    text-decoration-color: gray;
+}

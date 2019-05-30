@@ -1,5 +1,9 @@
 .NutLogo {
     width: 60px;
     height: 60px;
-    margin: 5px
+    padding: 2px; 
+}
+
+.navbar {
+    background-color: white;
 }

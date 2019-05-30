@@ -1,0 +1,24 @@
+.NewsBorderCard {
+    border-style: outset;
+    padding: 2em;
+    background-color: white;
+}
+
+.NewsCard {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 2em;
+}
+.NewsButton {
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+}
+
+.NewsForm {
+    display: flex;
+    justify-content: center;
+    border-style: outset;
+    padding: 2em;
+    background-color: white;
+}

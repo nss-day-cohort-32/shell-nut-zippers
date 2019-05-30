@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import DbCalls from "../DbCalls"
+import "./News.css"
 
 export default class EventsEditForm extends Component {
     state = {

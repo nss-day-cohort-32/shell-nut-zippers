@@ -12,8 +12,8 @@ export default class EventsCard extends Component {
                <section className="ForumCard">
                    {
                        this.props.forum.map(forum =>
-                        <div key={forum.id}>
-                            {forum.userPosted}
+                        <div key={forum.id} className="ForumHistory">
+                            <p className="ForumUser">{forum.userPosted}</p>
                             <br></br>
                             {forum.message}
                         <button
@@ -26,7 +26,6 @@ export default class EventsCard extends Component {
                             <button className="btn btn-primary"
                                 onClick={() => this.props.deleteMessages(forum.id)}
                                 >Delete</button>
-                            <hr></hr>
                         </div>
                        )
                    }
