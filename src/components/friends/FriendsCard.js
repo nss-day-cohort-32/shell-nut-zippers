@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import DbCalls from "../DbCalls"
 
 export default class FriendsCard extends Component {
 
@@ -26,7 +25,7 @@ export default class FriendsCard extends Component {
                                 <br></br>
 
                                 <button className="btn btn-primary"
-                                    onClick={() => this.props.deleteFriends(friend.id)}
+                                    onClick={() => this.props.deleteFriend(friend.id)}
                                 >Delete Friend</button>
                             </div>
                         )

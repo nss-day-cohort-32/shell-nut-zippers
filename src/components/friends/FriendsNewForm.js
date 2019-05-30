@@ -1,50 +1,54 @@
 import React, { Component } from "react"
+import DbCalls from "../DbCalls"
 import {
-    InputGroup,
-    InputGroupAddon,
-    InputGroupButtonDropdown,
-    InputGroupDropdown,
-    Input,
-    Button,
-    Dropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem
-   } from 'reactstrap';
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButtonDropdown,
+  InputGroupDropdown,
+  Input,
+  Button,
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from 'reactstrap';
 
-   export default class FriendsNewForm extends Component {
-    constructor(props) {
-      super(props);
+export default class FriendsNewForm extends Component {
 
-      this.toggleDropDown = this.toggleDropDown.bind(this);
-      this.toggleSplit = this.toggleSplit.bind(this);
-      this.state = {
-        dropdownOpen: false,
-        splitButtonOpen: false
-      };
-    }
+  state = {
+    text: "Hello Brian",
+    // searchResults: results
+  }
 
-    toggleDropDown() {
-      this.setState({
-        dropdownOpen: !this.state.dropdownOpen
-      });
-    }
+  grabInputText(evt) {
+    console.log(evt.target.value)
+    this.setState({text:evt.target.value})
+  }
 
-    toggleSplit() {
-      this.setState({
-        splitButtonOpen: !this.state.splitButtonOpen
-      });
-    }
+  searchInput() {
+    console.log(this.state.text)
+    console.log(this.props.users)
+    DbCalls.SearchUsers(this.state.text)
+    .then(results => console.log(results))
+  }
 
-    render() {
-      return (
+  render() {
+    return (
+      <React.Fragment>
         <div>
-          <InputGroup>
-            <InputGroupAddon addonType="prepend"><Button>Search Users</Button></InputGroupAddon>
-            <Input />
-          </InputGroup>
+
+          <section className="UsersCard">
+                  <InputGroup>
+                    <InputGroupAddon addonType="prepend"><Button className="SearchUsers"
+                      onClick={() => this.searchInput()}>Search Users</Button></InputGroupAddon>
+                    <Input onKeyUp={evt => this.grabInputText(evt)} />
+                  </InputGroup>
+          </section>
+
+          <h1>Hello</h1>
           <br />
         </div>
-      );
-    }
+      </React.Fragment>
+    );
   }
+}
