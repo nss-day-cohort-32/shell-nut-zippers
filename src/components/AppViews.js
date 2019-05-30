@@ -3,6 +3,7 @@ import { Route, Redirect } from 'react-router-dom'
 import Login from "./login/LoginForm"
 import FriendsCard from "./friends/FriendsCard"
 import FriendsNewForm from "./friends/FriendsNewForm"
+import FriendsResults from "./friends/FriendsResults"
 import DbCalls from "./DbCalls";
 import EventsCard from "./events/EventsCard"
 import EventsNewForm from "./events/EventsNewForm"
@@ -31,6 +32,15 @@ export default class AppViews extends Component {
         friends: []
     };
 
+    searchResults = (names) =>
+        DbCalls.SearchUsers(names)
+        .then(() => DbCalls.getAllUsers())
+        .then(names =>
+            this.setState({
+                names: names
+            })
+        )
+
     addEvent = (event) =>
         DbCalls.postNewEvents(event)
             .then(() => DbCalls.getAllEvents())
@@ -41,7 +51,7 @@ export default class AppViews extends Component {
             );
 
     addFriend = (friend) =>
-        DbCalls.postNewFriends(friend)
+        DbCalls.addNewFriend(friend)
             .then(() => DbCalls.getAllFriends())
             .then(friends =>
                 this.setState({
@@ -170,7 +180,6 @@ export default class AppViews extends Component {
 
             .then(() => DbCalls.getAllEvents())
             .then(events => newState.events = events)
-            .then(users => newState.users = users)
 
         .then(() => DbCalls.getAllMessages())
         .then(forum => newState.forum = forum)
@@ -193,6 +202,7 @@ export default class AppViews extends Component {
 
             .then(() => DbCalls.getAllFriends())
             .then(friends => newState.friends = friends)
+
 
 
             .then(() => this.setState(newState))
@@ -345,7 +355,7 @@ export default class AppViews extends Component {
 
                 <Route exact path="/friends"
                     render={(props) => {
-                        return <FriendsCard friends={this.state.friends} {
+                        return <FriendsCard friends={this.state.friends} deleteFriend={this.deleteFriend} {
                             ...props
                         } />;
                     }
@@ -356,11 +366,27 @@ export default class AppViews extends Component {
                         return <FriendsNewForm {
                             ...props
                         }
-                            friends={this.state.friends}
-                            addFriend={this.state.addFriend} />
+                            users={this.state.users}
+                            addFriend={this.addFriend}
+                            searchResults={this.searchResults}
+                             />
 
                     }
                     } />
+
+                     <Route path="/friends/search"
+                    render={(props) => {
+                        return <FriendsResults {
+                            ...props
+                        }
+                            users={this.state.users}
+                            addFriend={this.addFriend}
+                            // searchResults={this.searchResults}
+                             />
+
+                    }
+                    } />
+
 
             </React.Fragment>
         )
