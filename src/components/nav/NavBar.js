@@ -1,9 +1,11 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
+import "./NavBar.css"
+import NutLogo from "./NutLogo.svg"
 
 
-class NavBar extends Component {
+export default class NavBar extends Component {
     render() {
         return (
             <nav className="navbar navbar-light light-blue flex-md-nowrap p-0 shadow">
@@ -17,19 +19,19 @@ class NavBar extends Component {
                     <li className="nav-item">
                         <Link className="nav-link" to="/events">Events</Link>
                     </li>
-                    <li className="nave-item">
+                    <li className="nav-item">
                         <Link className="nav-link" to="/tasks">Tasks</Link>
                     </li>
-                    <li className="nave-item">
+                    <li className="nav-item">
                         <Link className="nav-link" to="/forum">Forum</Link>
                     </li>
-                    <li className="nave-item">
+                    <li className="nav-item">
                         <Link className="nav-link" to="/friends">Friends</Link>
                     </li>
                 </ul>
+                   <img src={NutLogo} alt="Nutshell" className="NutLogo" onClick={()=> this.props.history.push("/login")}></img>
             </nav>
         )
     }
 }
 
-export default NavBar
