@@ -33,7 +33,7 @@ export default class NewsCard extends Component {
                                     this.props.history.push(`/news/${news.id}/edit`);
                             }}>
                             Edit</button>
-
+                            <br></br>
                         <button className="btn btn-primary"
                                 onClick={() => this.props.deleteNews(news.id)}
                                 >Delete</button>

@@ -13,6 +13,9 @@ import TasksNewForm from "./tasks/TasksNewForm"
 import TasksEditForm from "./tasks/TasksEditForm"
 import NewNewsForm from "./news/NewsNewForm"
 import NewsEditForm from "./news/NewsEditForm"
+import ForumCard from "./forum/ForumCard"
+import ForumEditForm from "./forum/ForumEditForm"
+import ForumNewForm from "./forum/ForumNewForm"
 
 
 
@@ -125,6 +128,34 @@ export default class AppViews extends Component {
             });
     };
 
+    addMessage = (forum) =>
+        DbCalls.postNewMessages(forum)
+        .then(() => DbCalls.getAllMessages())
+        .then(forum =>
+            this.setState({
+            forum: forum
+        })
+    );
+
+    deleteMessages = (id) => {
+        const newState = {};
+        DbCalls.deleteMessages(id)
+        .then(DbCalls.getAllMessages)
+        .then(forum => 
+            {newState.forum = forum})
+        .then(() => this.setState(newState))
+    };
+
+    putMessages = (editedForumObject) => {
+        return DbCalls.putMessages(editedForumObject)
+            .then(() => DbCalls.getAllMessages())
+            .then(forum => {
+                this.setState({
+                    forum: forum
+                })
+            });
+    };
+
     componentDidMount() {
         console.log("didmount");
         const newState = {}
@@ -141,6 +172,8 @@ export default class AppViews extends Component {
             .then(events => newState.events = events)
             .then(users => newState.users = users)
 
+        .then(() => DbCalls.getAllMessages())
+        .then(forum => newState.forum = forum)
 
 
             .then(() => DbCalls.getAllTasks())
@@ -272,7 +305,38 @@ export default class AppViews extends Component {
                             news={this.state.news}
                             putNews={this.putNews} />
                     }
-                    } />
+                }/>
+                <Route exact path = "/forum"
+                render = {(props) => {
+                        if (this.isAuthenticated()) {
+                            return <ForumCard {
+                                ...props
+                            }
+                            forum = {this.state.forum}
+                            deleteMessages = {this.deleteMessages}/>
+                        } else {
+                            return <Redirect to = "/login" />
+                        }
+                    }
+                }/>
+                <Route path = "/forum"
+                render = {(props) => {
+                        return <ForumNewForm {
+                            ...props
+                        }
+                        forum = {this.state.forum}
+                        addMessage = {this.addMessage}/>
+                    }
+                }/>
+                <Route path = "/forum/:forumId(\d+)/edit"
+                render = {props => {
+                        return <ForumEditForm {
+                            ...props
+                        }
+                        forum = {this.state.forum}
+                        putMessages = {this.putMessages}/>
+                    }
+                }/>
 
 
 
