@@ -33,7 +33,7 @@ export default class EventsCard extends Component {
                                     this.props.history.push(`/events/${event.id}/edit`);
                             }}>
                             Edit</button>
-
+                            <br></br>
                         <button className="btn btn-primary"
                                 onClick={() => this.props.deleteEvents(event.id)}
                                 >Delete</button>

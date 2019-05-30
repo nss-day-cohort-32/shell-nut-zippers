@@ -1,0 +1,19 @@
+
+.NewForumForm {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    margin: 5px;
+    border-style: outset;
+}
+
+.ForumCard {
+    display: flex;
+    background-color: rgb(204, 229, 255);
+    flex-direction: column;
+    justify-content: right;
+    flex: 1;
+    margin: 5px;
+}
+

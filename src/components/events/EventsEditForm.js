@@ -85,7 +85,7 @@ export default class EventsEditForm extends Component {
                         onClick={this.updateExistingEvent}
                         className="btn btn-primary"
                         >
-                        Submit
+                        Save Edit
                         </button>
                     </form>
             </React.Fragment>
