@@ -37,6 +37,11 @@ export default class TaskCard extends Component {
                                 <button className="btn btn-primary"
                                     onClick={() => this.props.deleteTasks(task.id)}
                                 >Delete</button>
+                                {/*
+                                <button
+                                    onClick={() => this.onCheckboxBtnClick()}
+                                    active={this.props.hideTasks(task.id)}>Completed</button> */}
+
                             </div>
                         )
                     }
