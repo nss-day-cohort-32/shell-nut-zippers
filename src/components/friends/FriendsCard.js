@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import DbCalls from "../DbCalls"
 
 export default class FriendsCard extends Component {
 
