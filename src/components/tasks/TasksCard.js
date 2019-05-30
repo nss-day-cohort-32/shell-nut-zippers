@@ -23,6 +23,7 @@ export default class TaskCard extends Component {
                             <div key={task.id}>
                                 {task.taskName}
                                 <br></br>
+                                {"Complete By: "}
                                 {task.completeDate}
                                 <br></br>
                                 <button
