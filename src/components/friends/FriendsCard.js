@@ -7,31 +7,31 @@ export default class FriendsCard extends Component {
     render() {
         return (
             <React.Fragment>
-            <div className="FriendsButton">
-                <button type="button"
-                    className="btn btn-success"
-                    onClick={() => {
-                        this.props.history.push("/friends/search")
-                    }
-                    }>
-                    Add New Friend
+                <div className="FriendsButton">
+                    <button type="button"
+                        className="btn btn-success"
+                        onClick={() => {
+                            this.props.history.push("/friends/search")
+                        }
+                        }>
+                        Add New Friend
                 </button>
-            </div>
+                </div>
 
-            <section className="FriendsCard">
-                   {
-                       this.props.friends.map(friend =>
-                        <div key={friend.id}>
-                            {friend.addedUser}
-                            <br></br>
+                <section className="FriendsCard">
+                    {
+                        this.props.friends.map(friend =>
+                            <div key={friend.id}>
+                                {friend.addedUser}
+                                <br></br>
 
-                        <button className="btn btn-primary"
-                                onClick={() => this.props.deleteFriends(friend.id)}
+                                <button className="btn btn-primary"
+                                    onClick={() => this.props.deleteFriends(friend.id)}
                                 >Delete Friend</button>
-                        </div>
-                       )
-                   }
-               </section>
+                            </div>
+                        )
+                    }
+                </section>
             </React.Fragment>
         )
     }

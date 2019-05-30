@@ -88,8 +88,8 @@ export default class AppViews extends Component {
             .then(() => this.setState(newState))
     };
 
-    putTasks = (editedTasks) => {
-        return DbCalls.putTasks(editedTasks)
+    putTask = (editedTasks) => {
+        return DbCalls.putTask(editedTasks)
             .then(() => DbCalls.getAllTasks())
             .then(tasks => {
                 this.setState({
@@ -230,7 +230,7 @@ export default class AppViews extends Component {
                             ...props
                         }
                             tasks={this.state.tasks}
-                            addTasks={this.addTasks} />
+                            addTask={this.addTask} />
                     }
                     } />
                 <Route path="/tasks/:taskId(\d+)/edit"
@@ -239,7 +239,7 @@ export default class AppViews extends Component {
                             ...props
                         }
                             tasks={this.state.tasks}
-                            putTasks={this.putTasks} />
+                            putTask={this.putTask} />
                     }
                     } />
                 <Route exact path="/news"
@@ -255,7 +255,6 @@ export default class AppViews extends Component {
                         }
                     }
                     } />
-                }/>
                 <Route path="/news/new"
                     render={(props) => {
                         return <NewNewsForm {

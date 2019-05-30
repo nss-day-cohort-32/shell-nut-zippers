@@ -57,8 +57,18 @@
   "tasks": [
     {
       "id": 65,
-      "taskName": "task-name",
-      "completeDate": "task-date"
+      "taskName": "keisha task",
+      "completeDate": "2019-05-29"
+    },
+    {
+      "taskName": "holy shit cool stuff",
+      "completeDate": "2019-06-07",
+      "id": 66
+    },
+    {
+      "id": 67,
+      "taskName": "polish shoes",
+      "completeDate": "2020-03-04"
     }
   ]
 }

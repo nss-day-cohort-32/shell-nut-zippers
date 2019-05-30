@@ -14,7 +14,7 @@ export default class TasksEditForm extends Component {
         this.setState(stateToChange)
     }
 
-    updateExistingEvent = evt => {
+    updateExistingTask = evt => {
         evt.preventDefault()
         if (this.state.completeDate === "") {
             window.alert("Please select a date");
@@ -25,13 +25,13 @@ export default class TasksEditForm extends Component {
                 completeDate: this.state.completeDate
             };
 
-            this.props.putTasks(editedTask)
+            this.props.putTask(editedTask)
                 .then(() => this.props.history.push("/tasks"))
         }
     }
 
     componentDidMount() {
-        DbCalls.getTasks(this.props.match.params.eventId)
+        DbCalls.getTasks(this.props.match.params.taskId)
             .then(task => {
                 this.setState({
                     taskName: task.taskName,
