@@ -3,6 +3,8 @@ import React, { Component } from "react"
 
 export default class TaskCard extends Component {
     render() {
+        //Filter out any tasks that were marked as complete
+        let noCompletes = this.props.tasks.filter(task => task.complete !== 1)
         return (
             <React.Fragment>
 
@@ -19,8 +21,10 @@ export default class TaskCard extends Component {
 
                 <section className="TaskCard">
                     {
-                        this.props.tasks.map(task =>
+                        noCompletes.map(task =>
                             <div key={task.id}>
+                                {/* On check of checkbox, capture the evt to get the ID and pass taskName and Complete Date as well */}
+                                <input type="checkbox" id={task.id} onChange={(evt) => this.props.completeTask(evt.target.id, task.taskName, task.completeDate)}></input>
                                 {task.taskName}
                                 <br></br>
                                 {"Complete By: "}

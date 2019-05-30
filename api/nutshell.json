@@ -57,19 +57,34 @@
   ],
   "tasks": [
     {
-      "id": 65,
-      "taskName": "keisha task",
-      "completeDate": "2019-05-29"
+      "complete": 1,
+      "taskName": "hide me",
+      "completeDate": "2019-05-03",
+      "id": 65
     },
     {
+      "complete": 1,
       "taskName": "holy shit cool stuff",
       "completeDate": "2019-06-07",
       "id": 66
     },
     {
-      "id": 67,
+      "complete": 1,
       "taskName": "polish shoes",
-      "completeDate": "2020-03-04"
+      "completeDate": "2020-03-04",
+      "id": 67
+    },
+    {
+      "complete": 1,
+      "taskName": "hide this task!",
+      "completeDate": "2020-05-06",
+      "id": 68
+    },
+    {
+      "complete": 1,
+      "taskName": "aoiejfioaje",
+      "completeDate": "2200-02-02",
+      "id": 69
     }
   ]
 }

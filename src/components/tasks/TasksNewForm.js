@@ -20,6 +20,7 @@ export default class TasksNewForm extends Component {
             window.alert("Please select a date");
         } else {
             const task = {
+                complete: 0,
                 taskName: this.state.taskName,
                 completeDate: this.state.completeDate
             };
