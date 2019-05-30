@@ -8,6 +8,9 @@ import EventsCard from "./events/EventsCard"
 import EventsNewForm from "./events/EventsNewForm"
 import EventsEditForm from "./events/EventsEditForm"
 import NewsCard from "./news/NewsCard"
+import TasksCard from "./tasks/TasksCard"
+import TasksNewForm from "./tasks/TasksNewForm"
+import TasksEditForm from "./tasks/TasksEditForm"
 import NewNewsForm from "./news/NewsNewForm"
 import NewsEditForm from "./news/NewsEditForm"
 
@@ -27,38 +30,36 @@ export default class AppViews extends Component {
 
     addEvent = (event) =>
         DbCalls.postNewEvents(event)
-        .then(() => DbCalls.getAllEvents())
-        .then(events =>
-            this.setState({
-            events: events
-        })
-    );
+            .then(() => DbCalls.getAllEvents())
+            .then(events =>
+                this.setState({
+                    events: events
+                })
+            );
 
     addFriend = (friend) =>
         DbCalls.postNewFriends(friend)
-        .then(() => DbCalls.getAllFriends())
-        .then(friends =>
-            this.setState({
-                friends: friends
-            })
-        );
+            .then(() => DbCalls.getAllFriends())
+            .then(friends =>
+                this.setState({
+                    friends: friends
+                })
+            );
 
     deleteEvents = (id) => {
         const newState = {};
         DbCalls.deleteEvents(id)
-        .then(DbCalls.getAllEvents)
-        .then(events => 
-            {newState.events = events})
-        .then(() => this.setState(newState))
+            .then(DbCalls.getAllEvents)
+            .then(events => { newState.events = events })
+            .then(() => this.setState(newState))
     };
 
     deleteFriend = (id) => {
         const newState = {};
         DbCalls.deleteFriends(id)
-        .then(DbCalls.getAllFriends)
-        .then(friends =>
-            {newState.friends = friends})
-        .then(() => this.setState(newState))
+            .then(DbCalls.getAllFriends)
+            .then(friends => { newState.friends = friends })
+            .then(() => this.setState(newState))
     }
 
     putEvents = (editedEventObject) => {
@@ -70,63 +71,98 @@ export default class AppViews extends Component {
                 })
             });
     };
- 
+    addTask = (task) =>
+        DbCalls.postNewTasks(task)
+            .then(() => DbCalls.getAllTasks())
+            .then(tasks =>
+                this.setState({
+                    tasks: tasks
+                })
+            );
+
+    deleteTasks = (id) => {
+        const newState = {};
+        DbCalls.deleteTasks(id)
+            .then(DbCalls.getAllTasks)
+            .then(tasks => { newState.tasks = tasks })
+            .then(() => this.setState(newState))
+    };
+
+    putTask = (editedTasks) => {
+        return DbCalls.putTask(editedTasks)
+            .then(() => DbCalls.getAllTasks())
+            .then(tasks => {
+                this.setState({
+                    tasks: tasks
+                })
+            });
+    };
+
     addNews = (news) =>
-    DbCalls.postNewNews(news)
-    .then(() => DbCalls.getAllNews())
-    .then(news =>
-        this.setState({
-        news: news
-    })
-);
+        DbCalls.postNewNews(news)
+            .then(() => DbCalls.getAllNews())
+            .then(news =>
+                this.setState({
+                    news: news
+                })
+            );
 
-deleteNews = (id) => {
-    const newState = {};
-    DbCalls.deleteNews(id)
-    .then(DbCalls.getAllNews)
-    .then(news => 
-        {newState.news = news})
-    .then(() => this.setState(newState))
-};
+    deleteNews = (id) => {
+        const newState = {};
+        DbCalls.deleteNews(id)
+            .then(DbCalls.getAllNews)
+            .then(news => { newState.news = news })
+            .then(() => this.setState(newState))
+    };
 
-putNews = (editedNewsObject) => {
-    return DbCalls.putNews(editedNewsObject)
-        .then(() => DbCalls.getAllNews())
-        .then(news => {
-            this.setState({
-                news: news
-            })
-        });
-};
+    putNews = (editedNewsObject) => {
+        return DbCalls.putNews(editedNewsObject)
+            .then(() => DbCalls.getAllNews())
+            .then(news => {
+                this.setState({
+                    news: news
+                })
+            });
+    };
 
     componentDidMount() {
         console.log("didmount");
         const newState = {}
 
         DbCalls.getAllUsers()
-        .then(users => newState.users = users)
+            .then(users => newState.users = users)
 
 
-        .then(() => DbCalls.getAllNews())
-        .then(news => newState.news = news)
+            .then(() => DbCalls.getAllNews())
+            .then(news => newState.news = news)
 
 
-        .then(() => DbCalls.getAllEvents())
-        .then(events => newState.events = events)
+            .then(() => DbCalls.getAllEvents())
+            .then(events => newState.events = events)
+            .then(users => newState.users = users)
 
 
-        .then(() => DbCalls.getAllTasks())
-        .then(tasks => newState.tasks = tasks)
+
+            .then(() => DbCalls.getAllTasks())
+            .then(tasks => newState.tasks = tasks)
 
 
-        .then(() => DbCalls.getAllMessages())
-        .then(messages => newState.messages = messages)
-
-        .then(() => DbCalls.getAllFriends())
-        .then(friends => newState.friends = friends)
+            .then(() => DbCalls.getAllEvents())
+            .then(events => newState.events = events)
 
 
-        .then(() => this.setState(newState))
+            .then(() => DbCalls.getAllTasks())
+            .then(tasks => newState.tasks = tasks)
+
+
+            .then(() => DbCalls.getAllMessages())
+            .then(messages => newState.messages = messages)
+
+            .then(() => DbCalls.getAllFriends())
+            .then(friends => newState.friends = friends)
+
+
+            .then(() => this.setState(newState))
 
     };
 
@@ -136,100 +172,131 @@ putNews = (editedNewsObject) => {
         return (
             <React.Fragment >
 
-                <Route exact path = "/login"
-                render = {(props) => {
+                <Route exact path="/login"
+                    render={(props) => {
                         if (!this.isAuthenticated()) {
                             return
 
                         }
                     }
-                }/>
-                <Route exact path = "/events"
-                render = {(props) => {
+                    } />
+                <Route exact path="/events"
+                    render={(props) => {
                         if (this.isAuthenticated()) {
                             return <EventsCard {
                                 ...props
                             }
-                            events = {this.state.events}
-                            deleteEvents = {this.deleteEvents}/>
+                                events={this.state.events}
+                                deleteEvents={this.deleteEvents} />
                         } else {
-                            return <Redirect to = "/login" />
+                            return <Redirect to="/login" />
                         }
                     }
-                }/>
-                <Route path = "/events/new"
-                render = {(props) => {
+                    } />
+                <Route path="/events/new"
+                    render={(props) => {
                         return <EventsNewForm {
                             ...props
                         }
-                        events = {this.state.events}
-                        addEvent = {this.addEvent}/>
+                            events={this.state.events}
+                            addEvent={this.addEvent} />
                     }
-                }/>
-                <Route path = "/events/:eventId(\d+)/edit"
-                render = {props => {
+                    } />
+                <Route path="/events/:eventId(\d+)/edit"
+                    render={props => {
                         return <EventsEditForm {
                             ...props
                         }
-                        events = {this.state.events}
-                        putEvents = {this.putEvents}/>
+                            events={this.state.events}
+                            putEvents={this.putEvents} />
                     }
-                }/>
-                <Route exact path = "/news"
-                render = {(props) => {
+                    } />
+                <Route exact path="/tasks"
+                    render={(props) => {
+                        if (this.isAuthenticated()) {
+                            return <TasksCard {
+                                ...props
+                            }
+                                tasks={this.state.tasks}
+                                deleteTasks={this.deleteTasks} />
+                        } else {
+                            return <Redirect to="/login" />
+                        }
+                    }
+                    } />
+                <Route path="/tasks/new"
+                    render={(props) => {
+                        return <TasksNewForm {
+                            ...props
+                        }
+                            tasks={this.state.tasks}
+                            addTask={this.addTask} />
+                    }
+                    } />
+                <Route path="/tasks/:taskId(\d+)/edit"
+                    render={props => {
+                        return <TasksEditForm {
+                            ...props
+                        }
+                            tasks={this.state.tasks}
+                            putTask={this.putTask} />
+                    }
+                    } />
+                <Route exact path="/news"
+                    render={(props) => {
                         if (this.isAuthenticated()) {
                             return <NewsCard {
                                 ...props
                             }
-                            news = {this.state.news}
-                            deleteNews = {this.deleteNews}/>
+                                news={this.state.news}
+                                deleteNews={this.deleteNews} />
                         } else {
-                            return <Redirect to = "/login" />
+                            return <Redirect to="/login" />
                         }
                     }
-                }/>
-                <Route path = "/news/new"
-                render = {(props) => {
+                    } />
+                <Route path="/news/new"
+                    render={(props) => {
                         return <NewNewsForm {
                             ...props
                         }
-                        News = {this.state.news}
-                        addNews = {this.addNews}/>
+                            News={this.state.news}
+                            addNews={this.addNews} />
                     }
-                }/>
-                <Route path = "/news/:newsId(\d+)/edit"
-                render = {props => {
+                    } />
+                <Route path="/news/:newsId(\d+)/edit"
+                    render={props => {
                         return <NewsEditForm {
                             ...props
                         }
-                        news = {this.state.news}
-                        putNews = {this.putNews}/>
+                            news={this.state.news}
+                            putNews={this.putNews} />
                     }
-                }/>
+                    } />
 
 
 
-                <Route path = "/login"
-                component = {Login}/>
+                <Route path="/login"
+                    component={Login} />
 
-                <Route exact path = "/friends"
-                render = {(props) => {
-                    return <FriendsCard friends = {this.state.friends} {
-                        ...props
-                    } />;
-                }
-                }/>
-
-                <Route path = "/friends/search"
-                render = {(props) => {
-                    return <FriendsNewForm {
-                    ...props
+                <Route exact path="/friends"
+                    render={(props) => {
+                        return <FriendsCard friends={this.state.friends} {
+                            ...props
+                        } />;
                     }
-                        friends = {this.state.friends}
-                        addFriend = {this.state.addFriend}/>
+                    } />
+
+                <Route path="/friends/search"
+                    render={(props) => {
+                        return <FriendsNewForm {
+                            ...props
+                        }
+                            friends={this.state.friends}
+                            addFriend={this.state.addFriend} />
 
                     }
-                }/>
+                    } />
 
             </React.Fragment>
         )
