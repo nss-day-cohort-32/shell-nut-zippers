@@ -18,7 +18,9 @@ export default {
   },
 
 
-
+SearchUsers(nameFromInput) {
+  return fetch(`${remoteURL}/users?name_like=${nameFromInput}`).then(e => e.json())
+},
 
 
   getNews(id) {
@@ -185,7 +187,7 @@ export default {
   getAllFriends() {
     return fetch(`${remoteURL}/friends`).then(e => e.json())
   },
-  postNewFriends(newFriends) {
+  addNewFriend(newFriends) {
     return fetch(`${remoteURL}/friends`, {
       method: "POST",
       headers: {

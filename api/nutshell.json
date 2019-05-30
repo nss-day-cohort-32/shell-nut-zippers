@@ -5,14 +5,15 @@
       "name": "Matthew",
       "email": "user@email.com",
       "password": "password"
+    },
+    {
+      "id": 2,
+      "name": "Matssthew",
+      "email": "user@email.com",
+      "password": "test"
     }
   ],
   "friends": [
-    {
-      "id": 33,
-      "currentUser": "Matthew",
-      "addedUser": "Ellie"
-    },
     {
       "id": 34,
       "currentUser": "Matthew",
