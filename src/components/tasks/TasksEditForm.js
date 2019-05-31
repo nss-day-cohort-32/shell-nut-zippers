@@ -44,7 +44,7 @@ export default class TasksEditForm extends Component {
     render() {
         return (
             <React.Fragment>
-                <form className="TasksForm">
+                <form className="TaskForm" onSubmit={this.updateExistingTask}>
                     <div className="form-group">
                         <label htmlFor="taskName">Task Name</label>
                         <input
@@ -69,7 +69,7 @@ export default class TasksEditForm extends Component {
                     </div>
                     <button
                         type="submit"
-                        onClick={this.updateExistingTask}
+                        // onClick={this.updateExistingTask}
                         className="btn btn-primary"
                     >
                         Submit
