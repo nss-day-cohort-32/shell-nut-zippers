@@ -28,6 +28,8 @@ export default class FriendsCard extends Component {
                             <img src={UserIcon} alt="User" className="FriendIcon"/>
                                 <br></br>
                                 {friend.addedUser}
+                            <div key={friend.id}>
+                                {friend.name}
                                 <br></br>
                                 <br></br>
                                 <button className="btn btn-primary"
