@@ -21,7 +21,7 @@ export default class FriendsCard extends Component {
                     {
                         this.props.friends.map(friend =>
                             <div key={friend.id}>
-                                {friend.addedUser}
+                                {friend.name}
                                 <br></br>
 
                                 <button className="btn btn-primary"
