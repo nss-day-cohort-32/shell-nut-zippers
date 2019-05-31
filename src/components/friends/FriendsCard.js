@@ -36,6 +36,7 @@ export default class FriendsCard extends Component {
                                     onClick={() => this.props.deleteFriend(friend.id)}
                                 >Delete Friend</button>
                             </div>
+                            </div>
                         )
                     }
                 </section>
