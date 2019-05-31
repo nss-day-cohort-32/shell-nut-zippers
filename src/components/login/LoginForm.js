@@ -14,21 +14,32 @@ export default class Login extends Component {
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     }
+    
 
     handleLogin = (evt) => {
+        console.log(this.props.users)
+        let allUsers = this.props.users
+        let inputEmail = this.state.email
+        let matchUser = allUsers.find(user => user.email === inputEmail)
+        console.log(this.state.email)
+        // console.log("matchUsers", matchUser.id)
         evt.preventDefault();
         if (this.state.email === ""){
             window.alert("Please sign in");
+        }else if(!matchUser){
+            window.alert("EMAIL NOT FOUND")
           } else {
         sessionStorage.setItem(
             "credentials",
-            JSON.stringify({
-                email: this.state.email,
-                password: this.state.password
-            })
-        ) 
+            matchUser.id
+            // JSON.stringify({
+            //     email: this.state.email,
+            //     password: this.state.password
+            // })
+            )
+            // .then(this.props.history.push("/forum"))
+        }
     }
-}
 
 
     render() {

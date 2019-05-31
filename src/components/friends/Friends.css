@@ -12,7 +12,8 @@
 }
 
 .FriendsBorderCard {
-    border-style: outset;
+    box-shadow: rgb(108, 108, 106);
+    border-radius: 15px;
     padding: 2em;
     background-color: rgb(253, 254, 245);
 }
@@ -25,4 +26,19 @@
     margin: 1em 2em;
     background-color: rgb(136, 185, 218);
     border-radius: 100px;
+}
+
+
+.ResultsCard {
+    box-shadow: rgb(108, 108, 106);
+    border-radius: 15px;
+    padding: 2em;
+    background-color: rgb(253, 254, 245);
+}
+
+.AllResultsCards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 2em;
 }

@@ -47,7 +47,7 @@ export default class ForumEditForm extends Component {
             <React.Fragment>
                 <br></br>
                 <form className="ForumEditForm">
-                <div className="form-group">
+                {/* <div className="form-group">
                 <label htmlFor="userPosted">User</label>
                 <input type="text"
                 required
@@ -56,8 +56,8 @@ export default class ForumEditForm extends Component {
                 id="userPosted"
                 value = {this.state.userPosted}
             />
-          </div>
-          <div className="form-group">
+          </div> */}
+          <div className="MessageEdit">
             <label htmlFor="message">Message</label>
             <input
               type="text"

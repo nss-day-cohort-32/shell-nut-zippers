@@ -11,6 +11,15 @@
       "name": "Matssthew",
       "email": "user@email.com",
       "password": "test"
+<<<<<<< HEAD
+=======
+    },
+    {
+      "id": 3,
+      "name": "Bryan",
+      "email": "bryan@bryan.com",
+      "password": "test"
+>>>>>>> master
     }
   ],
   "friends": [
@@ -27,6 +36,7 @@
   "forum": [
     {
       "userPosted": "Ellie",
+<<<<<<< HEAD
       "message": "Whats Up!!!",
       "id": 2
     },
@@ -34,6 +44,30 @@
       "userPosted": "yaya",
       "message": "hi",
       "id": 3
+=======
+      "message": "hey gang whats goin on im just chilling in cedar rapids if u know what i mean ;)",
+      "id": 6
+    },
+    {
+      "userPosted": "Ellie",
+      "message": "what happens if i have a really long message like im talkin super long like what would happen? would it be fine or like totally not fine? im just trying to find out, find answers, and then i wanna KNOW the answer like REALLY know it and WHY and HOW and like ... yeah",
+      "id": 10
+    },
+    {
+      "id": 12,
+      "userPosted": "Ellie",
+      "message": "Hello Nutshell"
+    },
+    {
+      "userPosted": "Jimmy",
+      "message": "I think Keisha is a nerd",
+      "id": 13
+    },
+    {
+      "userId": "3",
+      "message": "get by session id",
+      "id": 14
+>>>>>>> master
     }
   ],
   "news": [
@@ -107,10 +141,22 @@
       "id": 71
     },
     {
+<<<<<<< HEAD
       "complete": 0,
       "taskName": "hh",
       "completeDate": "2019-05-28",
+=======
+      "complete": 1,
+      "taskName": "Push to github",
+      "completeDate": "2019-05-13",
+>>>>>>> master
       "id": 72
+    },
+    {
+      "complete": 0,
+      "taskName": "Push to GitHub",
+      "completeDate": "2019-05-07",
+      "id": 73
     }
   ]
 }
