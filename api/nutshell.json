@@ -28,17 +28,31 @@
   "forum": [
     {
       "userPosted": "Ellie",
-      "message": "Whats Up!!!",
-      "id": 2
+      "message": "hey gang whats goin on im just chilling in cedar rapids if u know what i mean ;)",
+      "id": 6
+    },
+    {
+      "userPosted": "Ellie",
+      "message": "what happens if i have a really long message like im talkin super long like what would happen? would it be fine or like totally not fine? im just trying to find out, find answers, and then i wanna KNOW the answer like REALLY know it and WHY and HOW and like ... yeah",
+      "id": 10
+    },
+    {
+      "userPosted": "Ellie",
+      "message": "rterhgeth",
+      "id": 11
+    },
+    {
+      "userPosted": "Ellie",
+      "message": "Hello Nutshell",
+      "id": 12
+    },
+    {
+      "userPosted": "Jimmy",
+      "message": "rterhgeth",
+      "id": 13
     }
   ],
   "news": [
-    {
-      "id": 7,
-      "newsTitle": "'Slow-motion disaster'",
-      "newsSynopsis": "Arkansas River: Every large community will see major flooding within 7-10 days",
-      "newsUrl": "treytreytre"
-    },
     {
       "id": 8,
       "newsTitle": "'Slow-motion disaster'",
@@ -92,7 +106,7 @@
       "id": 69
     },
     {
-      "complete": 0,
+      "complete": 1,
       "taskName": "stuff",
       "completeDate": "3030-02-02",
       "id": 70
@@ -102,6 +116,12 @@
       "taskName": "check that checkbox again dude",
       "completeDate": "2019-05-31",
       "id": 71
+    },
+    {
+      "complete": 0,
+      "taskName": "Push to github",
+      "completeDate": "2019-05-13",
+      "id": 72
     }
   ]
 }

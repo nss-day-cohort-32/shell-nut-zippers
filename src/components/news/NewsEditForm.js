@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import DbCalls from "../DbCalls"
+import "./News.css"
 
 export default class EventsEditForm extends Component {
     state = {
@@ -8,8 +9,6 @@ export default class EventsEditForm extends Component {
         newsUrl: ""
       }
     
-
-
     handleFieldChange = evt => {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value

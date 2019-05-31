@@ -1,0 +1,9 @@
+.LoginForm {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 2em;
+    margin: 5em 25em 4em;
+    border-style: outset;
+    background-color: rgb(253, 254, 245);
+}

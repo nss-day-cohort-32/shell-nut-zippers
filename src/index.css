@@ -1,0 +1,29 @@
+h1 {
+    font-family: 'Kumar One', cursive;
+}
+
+body {
+    font-family: 'Anonymous Pro', monospace;
+    background: url("https://cdn3.dualshockers.com/wp-content/uploads/2016/02/firewatch_5.jpg") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    color: rgb(18, 68, 109);
+}
+
+.btn-success {
+    background-color: rgb(90, 157, 90);
+    border-color: rgb(90, 157, 90);
+}
+
+.btn-primary {
+    background-color: rgb(20, 129, 218);
+    border-color: rgb(20, 129, 218);
+}
+
+.btn-primary:hover {
+    background-color: rgb(20, 100, 165);
+}
+
+.btn-success:hover {
+    background-color: rgb(65, 126, 79);
+}

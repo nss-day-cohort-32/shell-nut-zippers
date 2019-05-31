@@ -15,42 +15,47 @@ export default class Login extends Component {
         this.setState(stateToChange)
     }
 
-    handleLogin = (e) => {
-        e.preventDefault()
-
-    
+    handleLogin = (evt) => {
+        evt.preventDefault();
+        if (this.state.email === ""){
+            window.alert("Please sign in");
+          } else {
         sessionStorage.setItem(
             "credentials",
             JSON.stringify({
                 email: this.state.email,
                 password: this.state.password
             })
-        )
+        ) 
     }
+}
+
 
     render() {
         return (
-            <form onSubmit={this.handleLogin}>
-                <h1 className="h3 mb-3 font-weight-normal">Welcome to Nutshell!</h1>
+            <form
+            className="LoginForm">
+                <h1 className="Welcome">Welcome</h1>
                 <label htmlFor="inputEmail">
-                    Email address
+                    Email address:
                 </label>
                 <input onChange={this.handleFieldChange} type="email"
                        id="email"
-                       placeholder="Email address"
+                       placeholder=""
                        required="" autoFocus="" />
                        <br></br>
                 <label htmlFor="inputPassword">
-                    Password
+                    Password:
                 </label>
                 <input onChange={this.handleFieldChange} type="password"
                        id="password"
-                       placeholder="Password"
+                       placeholder=""
                        required="" />
                        <br></br>
                 <button type="submit"
-                className="btn btn-primary LoginSubmit">
-                    Sign in
+                className="btn btn-primary LoginSubmit"
+                onClick={this.handleLogin}>
+                    Sign In
                 </button>
             </form>
         )

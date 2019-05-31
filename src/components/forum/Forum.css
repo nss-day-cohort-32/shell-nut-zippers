@@ -1,19 +1,53 @@
 
 .NewForumForm {
-    display: flex;
+    padding: 1em 3em 1em 3em;
+    margin: 1em;
+}
+
+.ForumFooter {
     position: fixed;
+    margin: 2em;
     bottom: 0;
-    background-color: white;
-    margin: 5px;
-    border-style: outset;
+    float: left;
+    box-shadow: rgb(108, 108, 106);
+    border-radius: 15px;
+    background-color: rgb(253, 254, 245);
 }
 
 .ForumCard {
     display: flex;
-    background-color: rgb(204, 229, 255);
-    flex-direction: column;
+    float: right;
+    flex-direction: column-reverse;
     justify-content: right;
-    flex: 1;
-    margin: 5px;
+    width: 45%;
+    padding: 2em;
 }
 
+.ForumEditForm {
+    display: flex;
+    justify-content: space-around;
+    padding: 2em;
+    box-shadow: rgb(108, 108, 106);
+    border-radius: 15px;
+    background-color: rgb(253, 254, 245);
+}
+
+.ForumHistory {
+    border-radius: 15px;
+    border-bottom: 1px solid gray;
+    padding: 2em;
+    background-color: rgb(220, 236, 247);
+}
+
+.ForumHistoryBtn {
+    float: right;
+} 
+
+.ForumIcon {
+    width: 70px;
+    height: 70px;
+    opacity: 0.8;
+    padding: 6px;
+    background-color: rgb(136, 185, 218);
+    border-radius: 100px;
+}

@@ -46,7 +46,7 @@ export default class EventsEditForm extends Component {
     render() {
         return(
             <React.Fragment>
-                <form className="EventForm">
+                <form className="EventsForm">
                 <div className="form-group">
                     <label htmlFor="eventName">Event Name</label>
                     <input

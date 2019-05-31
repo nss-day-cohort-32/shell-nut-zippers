@@ -1,0 +1,47 @@
+.NewsBorderCard {
+    box-shadow: rgb(108, 108, 106);
+    border-radius: 15px;
+    margin: 3px;
+    padding: 2em;
+    background-color: rgb(253, 254, 245);
+}
+
+.NewsCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    flex: 1;
+    padding: 3em 9em;
+    margin: 5px;
+}
+
+.NewsButton {
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+}
+
+.NewsForm {
+    display: flex;
+    justify-content: center;
+    box-shadow: rgb(108, 108, 106);
+    border-radius: 15px;
+    padding: 2em;
+    background-color: rgb(253, 254, 245);
+}
+
+.NewsIcon {
+    width: 70px;
+    height: 70px;
+    opacity: 0.7;
+    padding: 4px;
+    margin: 2em 2em;
+}
+
+.EditNewsBtn {
+    float: right;
+}
+
+.DeleteNewsBtn {
+    float: right;
+}

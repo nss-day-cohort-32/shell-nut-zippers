@@ -1,4 +1,6 @@
 import React, { Component } from "react"
+import "./Tasks.css"
+import TasksIcon from "./TasksIcon.svg"
 
 
 export default class TaskCard extends Component {
@@ -21,14 +23,19 @@ export default class TaskCard extends Component {
 
                 <section className="TaskCard">
                     {
+                        
                         noCompletes.map(task =>
-                            <div key={task.id}>
+                            <div key={task.id}> 
+                            <div className="TasksBorderCard">
+                                <img src={TasksIcon} alt="Task" className="TasksIcon"/>
+                                <br></br>
                                 {/* On check of checkbox, capture the evt to get the ID and pass taskName and Complete Date as well */}
                                 <input type="checkbox" id={task.id} onChange={(evt) => this.props.completeTask(evt.target.id, task.taskName, task.completeDate)}></input>
                                 {task.taskName}
                                 <br></br>
                                 {"Complete By: "}
                                 {task.completeDate}
+                                <br></br>
                                 <br></br>
                                 <button
                                     type="button"
@@ -45,7 +52,7 @@ export default class TaskCard extends Component {
                                 <button
                                     onClick={() => this.onCheckboxBtnClick()}
                                     active={this.props.hideTasks(task.id)}>Completed</button> */}
-
+                            </div>
                             </div>
                         )
                     }

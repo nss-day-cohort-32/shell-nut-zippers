@@ -8,7 +8,7 @@ import NutLogo from "./NutLogo.svg"
 export default class NavBar extends Component {
     render() {
         return (
-            <nav className="navbar navbar-light light-blue flex-md-nowrap p-0 shadow">
+            <nav className="navbar p-0 shadow">
                 <ul className="nav nav-pills">
                     <li className="nav-item">
                         <Link className="nav-link" to="/login">Login</Link>
@@ -29,6 +29,7 @@ export default class NavBar extends Component {
                         <Link className="nav-link" to="/friends">Friends</Link>
                     </li>
                 </ul>
+                <h1 className="navTitle"> Nutshell </h1>
                    <img src={NutLogo} alt="Nutshell" className="NutLogo" onClick={()=> this.props.history.push("/login")}></img>
             </nav>
         )
