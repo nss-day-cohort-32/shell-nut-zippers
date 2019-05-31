@@ -18,9 +18,9 @@ export default {
   },
 
 
-SearchUsers(nameFromInput) {
-  return fetch(`${remoteURL}/users?name_like=${nameFromInput}`).then(e => e.json())
-},
+  SearchUsers(nameFromInput) {
+    return fetch(`${remoteURL}/users?name_like=${nameFromInput}`).then(e => e.json())
+  },
 
 
   getNews(id) {
@@ -85,6 +85,15 @@ SearchUsers(nameFromInput) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(editedTasks)
+    }).then(e => e.json());
+  },
+  completeTask(taskId, taskName, completeDate) {
+    return fetch(`${remoteURL}/tasks/${taskId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ complete: 1, taskName: taskName, completeDate: completeDate })
     }).then(e => e.json());
   },
   deleteTasks(id) {
