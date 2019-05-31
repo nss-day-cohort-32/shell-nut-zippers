@@ -11,48 +11,38 @@
       "name": "Matssthew",
       "email": "user@email.com",
       "password": "test"
-    },
-    {
-      "id": 3,
-      "name": "hgfj",
-      "email": "user@email.com",
-      "password": "test"
     }
   ],
   "friends": [
     {
+      "id": 34,
+      "currentUser": "Matthew",
+      "addedUser": "Jake"
+    },
+    {
       "name": "Matthew",
-      "id": 1
+      "id": 35
     }
   ],
   "forum": [
     {
       "userPosted": "Ellie",
-      "message": "hey gang whats goin on im just chilling in cedar rapids if u know what i mean ;)",
-      "id": 6
+      "message": "Whats Up!!!",
+      "id": 2
     },
     {
-      "userPosted": "Ellie",
-      "message": "what happens if i have a really long message like im talkin super long like what would happen? would it be fine or like totally not fine? im just trying to find out, find answers, and then i wanna KNOW the answer like REALLY know it and WHY and HOW and like ... yeah",
-      "id": 10
-    },
-    {
-      "userPosted": "Ellie",
-      "message": "rterhgeth",
-      "id": 11
-    },
-    {
-      "userPosted": "Ellie",
-      "message": "Hello Nutshell",
-      "id": 12
-    },
-    {
-      "userPosted": "Jimmy",
-      "message": "rterhgeth",
-      "id": 13
+      "userPosted": "yaya",
+      "message": "hi",
+      "id": 3
     }
   ],
   "news": [
+    {
+      "id": 7,
+      "newsTitle": "'Slow-motion disaster'",
+      "newsSynopsis": "Arkansas River: Every large community will see major flooding within 7-10 days",
+      "newsUrl": "treytreytre"
+    },
     {
       "id": 8,
       "newsTitle": "'Slow-motion disaster'",
@@ -106,10 +96,9 @@
       "id": 69
     },
     {
-      "complete": 1,
-      "taskName": "stuff",
-      "completeDate": "3030-02-02",
-      "id": 70
+      "id": 70,
+      "taskName": "stufflepuff",
+      "completeDate": "3030-02-02"
     },
     {
       "complete": 1,
@@ -119,8 +108,8 @@
     },
     {
       "complete": 0,
-      "taskName": "Push to github",
-      "completeDate": "2019-05-13",
+      "taskName": "hh",
+      "completeDate": "2019-05-28",
       "id": 72
     }
   ]
