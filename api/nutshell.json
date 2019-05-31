@@ -106,7 +106,7 @@
       "id": 69
     },
     {
-      "complete": 0,
+      "complete": 1,
       "taskName": "stuff",
       "completeDate": "3030-02-02",
       "id": 70
@@ -116,6 +116,12 @@
       "taskName": "check that checkbox again dude",
       "completeDate": "2019-05-31",
       "id": 71
+    },
+    {
+      "complete": 0,
+      "taskName": "Push to github",
+      "completeDate": "2019-05-13",
+      "id": 72
     }
   ]
 }

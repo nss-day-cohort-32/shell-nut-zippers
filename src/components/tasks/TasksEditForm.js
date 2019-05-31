@@ -44,7 +44,7 @@ export default class TasksEditForm extends Component {
     render() {
         return (
             <React.Fragment>
-                <form className="TaskForm" onSubmit={this.updateExistingTask}>
+                <form className="TasksForm" onSubmit={this.updateExistingTask}>
                     <div className="form-group">
                         <label htmlFor="taskName">Task Name</label>
                         <input

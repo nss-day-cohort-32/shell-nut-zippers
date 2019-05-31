@@ -23,12 +23,12 @@ export default class TaskCard extends Component {
 
                 <section className="TaskCard">
                     {
-                        this.props.tasks.map(task =>
-                            <div key={task.id} className="TasksBorderCard">
+                        
+                        noCompletes.map(task =>
+                            <div key={task.id}> 
+                            <div className="TasksBorderCard">
                                 <img src={TasksIcon} alt="Task" className="TasksIcon"/>
                                 <br></br>
-                        noCompletes.map(task =>
-                            <div key={task.id}>
                                 {/* On check of checkbox, capture the evt to get the ID and pass taskName and Complete Date as well */}
                                 <input type="checkbox" id={task.id} onChange={(evt) => this.props.completeTask(evt.target.id, task.taskName, task.completeDate)}></input>
                                 {task.taskName}
@@ -52,7 +52,7 @@ export default class TaskCard extends Component {
                                 <button
                                     onClick={() => this.onCheckboxBtnClick()}
                                     active={this.props.hideTasks(task.id)}>Completed</button> */}
-
+                            </div>
                             </div>
                         )
                     }
