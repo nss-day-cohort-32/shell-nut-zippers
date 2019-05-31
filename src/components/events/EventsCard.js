@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import "./Events.css"
+import EventsIcon from "./EventsIcon.svg"
 
 
 export default class EventsCard extends Component {
@@ -21,6 +22,8 @@ export default class EventsCard extends Component {
                    {
                        this.props.events.map(event =>
                         <div key={event.id} className="EventsBorderCard">
+                            <img src={EventsIcon} alt="Event" className="EventsIcon"/>
+                            <br></br>
                             {event.eventName}
                             <br></br>
                             {event.eventDate}

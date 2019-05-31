@@ -9,8 +9,6 @@ export default class EventsEditForm extends Component {
         newsUrl: ""
       }
     
-
-
     handleFieldChange = evt => {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value

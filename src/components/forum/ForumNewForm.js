@@ -27,13 +27,15 @@ export default class ForumNewForm extends Component {
     
           this.props
             .addMessage(forum)
-            .then(() => this.props.history.push("/forum"));
+            .then(() => this.setState({userPosted: ""}))
         }
       };
+
 
     render() {
         return (
             <React.Fragment>
+              <footer className="ForumFooter">
             <form className="NewForumForm">
                 <div className="form-group">
                 <label htmlFor="userPosted"> User </label>
@@ -43,6 +45,7 @@ export default class ForumNewForm extends Component {
                 onChange={this.handleFieldChange}
                 id="userPosted"
                 placeholder=""
+                value={this.state.userPosted}
             />
           </div>
           <div className="form-group">
@@ -63,6 +66,7 @@ export default class ForumNewForm extends Component {
             Send
           </button>
           </form>
+          </footer>
         </React.Fragment>
         )
     }

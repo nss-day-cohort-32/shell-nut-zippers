@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import "./News.css"
+import NewsIcon from "./NewsIcon.svg"
 
 export default class NewsCard extends Component {
     render() {
@@ -20,6 +21,7 @@ export default class NewsCard extends Component {
                    {
                        this.props.news.map(news =>
                         <div key={news.id} className="NewsBorderCard">
+                            <img src={NewsIcon} alt="News" className="NewsIcon"/>
                             {news.newsTitle}
                             <br></br>
                             {news.newsSynopsis}
@@ -28,12 +30,12 @@ export default class NewsCard extends Component {
                             <br></br>
                         <button
                             type="button"
-                            className="btn btn-success"
+                            className="btn btn-success EditNewsBtn"
                             onClick={() => {
                                     this.props.history.push(`/news/${news.id}/edit`);
                             }}>
                             Edit</button>
-                        <button className="btn btn-primary"
+                        <button className="btn btn-primary DeleteNewsBtn"
                                 onClick={() => this.props.deleteNews(news.id)}
                                 >Delete</button>
                         </div>

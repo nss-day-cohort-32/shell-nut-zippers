@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import "./Forum.css"
-
+import UserIcon from "./UserIcon.svg"
 
 export default class EventsCard extends Component {
     render() {
@@ -13,17 +13,19 @@ export default class EventsCard extends Component {
                    {
                        this.props.forum.map(forum =>
                         <div key={forum.id} className="ForumHistory">
-                            <p className="ForumUser">{forum.userPosted}</p>
-                            <br></br>
+                            <img src={UserIcon} alt="User" className="ForumIcon"/>
+                            <p className="ForumUser"> * {forum.userPosted}</p>
+                            <hr></hr>
                             {forum.message}
+                            <hr></hr>
                         <button
                             type="button"
-                            className="btn btn-success"
+                            className="btn btn-success ForumHistoryBtn"
                             onClick={() => {
                                     this.props.history.push(`/forum/${forum.id}/edit`);
                             }}>
                             Edit</button>
-                            <button className="btn btn-primary"
+                            <button className="btn btn-primary ForumHistoryBtn"
                                 onClick={() => this.props.deleteMessages(forum.id)}
                                 >Delete</button>
                         </div>

@@ -15,24 +15,27 @@ export default class Login extends Component {
         this.setState(stateToChange)
     }
 
-    handleLogin = (e) => {
-        e.preventDefault()
-
-    
+    handleLogin = (evt) => {
+        evt.preventDefault();
+        if (this.state.email === ""){
+            window.alert("Please sign in");
+          } else {
         sessionStorage.setItem(
             "credentials",
             JSON.stringify({
                 email: this.state.email,
                 password: this.state.password
             })
-        )
+        ) 
     }
+}
+
 
     render() {
         return (
-            <form onSubmit={this.handleLogin}
+            <form
             className="LoginForm">
-                <h1 className="NutshellTitle">Welcome to Nutshell!</h1>
+                <h1 className="Welcome">Welcome</h1>
                 <label htmlFor="inputEmail">
                     Email address:
                 </label>
@@ -51,7 +54,7 @@ export default class Login extends Component {
                        <br></br>
                 <button type="submit"
                 className="btn btn-primary LoginSubmit"
-                    >
+                onClick={this.handleLogin}>
                     Sign In
                 </button>
             </form>

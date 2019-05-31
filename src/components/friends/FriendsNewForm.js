@@ -44,8 +44,6 @@ export default class FriendsNewForm extends Component {
                     <Input onKeyUp={evt => this.grabInputText(evt)} />
                   </InputGroup>
           </section>
-
-          <h1>Hello</h1>
           <br />
         </div>
       </React.Fragment>
