@@ -12,7 +12,8 @@
 }
 
 .TasksBorderCard {
-    border-style: outset;
+    box-shadow: rgb(108, 108, 106);
+    border-radius: 15px;
     padding: 2em;
     background-color: rgb(254, 255, 242);
 }
@@ -20,7 +21,8 @@
 .TasksForm {
     display: flex;
     justify-content: center;
-    border-style: outset;
+    box-shadow: rgb(108, 108, 106);
+    border-radius: 15px;
     padding: 2em;
     background-color: rgb(254, 255, 242);
 }
