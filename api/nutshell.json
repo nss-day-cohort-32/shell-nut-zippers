@@ -11,13 +11,18 @@
       "name": "Matssthew",
       "email": "user@email.com",
       "password": "test"
+    },
+    {
+      "id": 3,
+      "name": "hgfj",
+      "email": "user@email.com",
+      "password": "test"
     }
   ],
   "friends": [
     {
-      "id": 34,
-      "currentUser": "Matthew",
-      "addedUser": "Jake"
+      "name": "Matthew",
+      "id": 1
     }
   ],
   "forum": [

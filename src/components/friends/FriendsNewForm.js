@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import DbCalls from "../DbCalls"
+import FriendsResults from "./FriendsResults"
 import {
   InputGroup,
   InputGroupAddon,
@@ -17,7 +18,7 @@ export default class FriendsNewForm extends Component {
 
   state = {
     text: "Hello Brian",
-    // searchResults: results
+    // searchResults: []
   }
 
   grabInputText(evt) {
@@ -29,10 +30,13 @@ export default class FriendsNewForm extends Component {
     console.log(this.state.text)
     console.log(this.props.users)
     DbCalls.SearchUsers(this.state.text)
-    .then(results => console.log(results))
+    .then(results => this.setState({
+      searchResults: results
+    }))
   }
 
   render() {
+    // console.log("searchResultsState", this.state.searchResults)
     return (
       <React.Fragment>
         <div>
@@ -45,10 +49,23 @@ export default class FriendsNewForm extends Component {
                   </InputGroup>
           </section>
 
-          <h1>Hello</h1>
+          <FriendsResults {...this.props} searchResults={this.state.searchResults} addFriend={this.props.addFriend} />
+
           <br />
         </div>
       </React.Fragment>
     );
   }
 }
+{/* <Route path="/friends/search"
+render={(props) => {
+    return <FriendsResults {
+        ...props
+    }
+        users={this.state.users}
+        addFriend={this.addFriend}
+        // searchResults={this.searchResults}
+         />
+
+}
+} /> */}

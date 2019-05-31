@@ -374,9 +374,7 @@ export default class AppViews extends Component {
 
                 <Route path="/friends/search"
                     render={(props) => {
-                        return <FriendsNewForm {
-                            ...props
-                        }
+                        return <FriendsNewForm {...props}
                             users={this.state.users}
                             addFriend={this.addFriend}
                             searchResults={this.searchResults}
@@ -384,6 +382,7 @@ export default class AppViews extends Component {
 
                     }
                     } />
+
 
                 <Route path="/friends/search"
                     render={(props) => {
@@ -397,6 +396,7 @@ export default class AppViews extends Component {
 
                     }
                     } />
+
 
 
             </React.Fragment>
