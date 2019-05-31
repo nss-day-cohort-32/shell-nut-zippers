@@ -29,12 +29,13 @@ export default class TaskCard extends Component {
                             <div className="TasksBorderCard">
                                 <img src={TasksIcon} alt="Task" className="TasksIcon"/>
                                 <br></br>
-                                {/* On check of checkbox, capture the evt to get the ID and pass taskName and Complete Date as well */}
-                                <input type="checkbox" id={task.id} onChange={(evt) => this.props.completeTask(evt.target.id, task.taskName, task.completeDate)}></input>
                                 {task.taskName}
                                 <br></br>
                                 {"Complete By: "}
                                 {task.completeDate}
+                                {/* On check of checkbox, capture the evt to get the ID and pass taskName and Complete Date as well */}
+                                <br></br>
+                                <input type="checkbox" id={task.id} onChange={(evt) => this.props.completeTask(evt.target.id, task.taskName, task.completeDate)}></input>
                                 <br></br>
                                 <br></br>
                                 <button

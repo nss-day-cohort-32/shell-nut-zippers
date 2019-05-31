@@ -34,12 +34,12 @@ export default class AppViews extends Component {
 
     searchResults = (names) =>
         DbCalls.SearchUsers(names)
-            .then(() => DbCalls.getAllUsers())
-            .then(names =>
-                this.setState({
-                    names: names
-                })
-            )
+        .then(() => DbCalls.getAllUsers())
+        .then(names =>
+            this.setState({
+                names: names
+            })
+        )
 
     addEvent = (event) =>
         DbCalls.postNewEvents(event)
@@ -111,17 +111,6 @@ export default class AppViews extends Component {
             });
     };
 
-    completeTask = (taskId, taskName, completeDate) => {
-        return DbCalls.completeTask(taskId, taskName, completeDate)
-            .then(() => DbCalls.getAllTasks())
-            .then(tasks => {
-                this.setState({
-                    tasks: tasks
-                })
-            });
-    };
-
-
     addNews = (news) =>
         DbCalls.postNewNews(news)
             .then(() => DbCalls.getAllNews())
@@ -151,19 +140,20 @@ export default class AppViews extends Component {
 
     addMessage = (forum) =>
         DbCalls.postNewMessages(forum)
-            .then(() => DbCalls.getAllMessages())
-            .then(forum =>
-                this.setState({
-                    forum: forum
-                })
-            );
+        .then(() => DbCalls.getAllMessages())
+        .then(forum =>
+            this.setState({
+            forum: forum
+        })
+    );
 
     deleteMessages = (id) => {
         const newState = {};
         DbCalls.deleteMessages(id)
-            .then(DbCalls.getAllMessages)
-            .then(forum => { newState.forum = forum })
-            .then(() => this.setState(newState))
+        .then(DbCalls.getAllMessages)
+        .then(forum => 
+            {newState.forum = forum})
+        .then(() => this.setState(newState))
     };
 
     putMessages = (editedForumObject) => {
@@ -191,8 +181,8 @@ export default class AppViews extends Component {
             .then(() => DbCalls.getAllEvents())
             .then(events => newState.events = events)
 
-            .then(() => DbCalls.getAllMessages())
-            .then(forum => newState.forum = forum)
+        .then(() => DbCalls.getAllMessages())
+        .then(forum => newState.forum = forum)
 
 
             .then(() => DbCalls.getAllTasks())
@@ -225,12 +215,12 @@ export default class AppViews extends Component {
         return (
             <React.Fragment >
 
-                <Route exact path="/login"
+                <Route exact path="/login" 
                     render={(props) => {
-                        if (!this.isAuthenticated()) {
-                            return
-
-                        }
+                            return <Login {
+                                ...props
+                            }
+                            users={this.state.users} />
                     }
                     } />
                 <Route exact path="/events"
@@ -271,8 +261,7 @@ export default class AppViews extends Component {
                                 ...props
                             }
                                 tasks={this.state.tasks}
-                                deleteTasks={this.deleteTasks}
-                                completeTask={this.completeTask} />
+                                deleteTasks={this.deleteTasks} />
                         } else {
                             return <Redirect to="/login" />
                         }
@@ -326,43 +315,42 @@ export default class AppViews extends Component {
                             news={this.state.news}
                             putNews={this.putNews} />
                     }
-                    } />
-                <Route exact path="/forum"
-                    render={(props) => {
+                }/>
+                <Route exact path = "/forum"
+                render = {(props) => {
                         if (this.isAuthenticated()) {
                             return <ForumCard {
                                 ...props
                             }
-                                forum={this.state.forum}
-                                deleteMessages={this.deleteMessages} />
+                            forum = {this.state.forum}
+                            deleteMessages = {this.deleteMessages}/>
                         } else {
-                            return <Redirect to="/login" />
+                            return <Redirect to = "/login" />
                         }
                     }
-                    } />
-                <Route path="/forum"
-                    render={(props) => {
+                }/>
+                <Route path = "/forum"
+                render = {(props) => {
                         return <ForumNewForm {
                             ...props
                         }
-                            forum={this.state.forum}
-                            addMessage={this.addMessage} />
+                        forum = {this.state.forum}
+                        addMessage = {this.addMessage}/>
                     }
-                    } />
-                <Route path="/forum/:forumId(\d+)/edit"
-                    render={props => {
+                }/>
+                <Route path = "/forum/:forumId(\d+)/edit"
+                render = {props => {
                         return <ForumEditForm {
                             ...props
                         }
-                            forum={this.state.forum}
-                            putMessages={this.putMessages} />
+                        forum = {this.state.forum}
+                        putMessages = {this.putMessages}/>
                     }
-                    } />
+                }/>
 
 
 
-                <Route path="/login"
-                    component={Login} />
+                
 
                 <Route exact path="/friends"
                     render={(props) => {
@@ -378,26 +366,11 @@ export default class AppViews extends Component {
                             users={this.state.users}
                             addFriend={this.addFriend}
                             searchResults={this.searchResults}
-                        />
+                             />
 
                     }
                     } />
-
-
-                <Route path="/friends/search"
-                    render={(props) => {
-                        return <FriendsResults {
-                            ...props
-                        }
-                            users={this.state.users}
-                            addFriend={this.addFriend}
-                        // searchResults={this.searchResults}
-                        />
-
-                    }
-                    } />
-
-
+                 
 
             </React.Fragment>
         )

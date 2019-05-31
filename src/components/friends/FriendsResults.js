@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 // import DbCalls from "../DbCalls"
+import UserIcon from "./UserIcon.svg"
 
 export default class FriendsResults extends Component {
 
@@ -21,7 +22,7 @@ export default class FriendsResults extends Component {
         console.log("hello", this.props.searchResults)
         if (!this.props.searchResults ) {
             return (
-                <p>Please Enter Name</p>
+                null
             )
         } else if(this.props.searchResults.length === 0){
             return (
@@ -34,12 +35,19 @@ export default class FriendsResults extends Component {
             <React.Fragment>
                 <div>
                 <h1>Results</h1>
-                    <section>
+                    <section className="AllResultsCards">
                         {
                             this.props.searchResults.map(user =>
-                                <div key={user.id}>
+                                <div key={user.id} className="ResultsCard">
+                                    <img src={UserIcon} alt="User" className="FriendIcon"/>
+                                    <br></br>
                                     {user.name}
-                                    <button type="submit" onClick={(event) => this.constructNewRel(event, user.name)}>Add Friend</button>
+                                    <br></br>
+                                    <br></br>
+                                    <button type="submit" 
+                                    className="btn btn-success"
+                                    onClick={(event) => this.constructNewRel(event, user.name)}>Add Friend</button>
+                                    <br></br>
 
 
 

@@ -4,6 +4,7 @@
     align-content: center;
     padding: 2em;
     margin: 5em 25em 4em;
-    border-style: outset;
+    box-shadow: rgb(108, 108, 106);
+    border-radius: 15px;
     background-color: rgb(253, 254, 245);
 }

@@ -21,13 +21,13 @@ export default class ForumNewForm extends Component {
           window.alert("Don't forget to define the user!");
         } else {
           const forum = {
-            userPosted: this.state.userPosted,
+            userId: sessionStorage.getItem("credentials"),
             message: this.state.message,
           };
     
           this.props
             .addMessage(forum)
-            .then(() => this.setState({userPosted: ""}))
+            .then(() => this.setState({message: ""}))
         }
       };
 
@@ -45,7 +45,7 @@ export default class ForumNewForm extends Component {
                 onChange={this.handleFieldChange}
                 id="userPosted"
                 placeholder=""
-                value={this.state.userPosted}
+                // value={this.state.userPosted}
             />
           </div>
           <div className="form-group">
@@ -57,6 +57,7 @@ export default class ForumNewForm extends Component {
               onChange={this.handleFieldChange}
               id="message"
               placeholder=""
+              value={this.state.message}
             />
           </div>
           <button
