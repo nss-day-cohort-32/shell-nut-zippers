@@ -2,9 +2,6 @@
 .NewForumForm {
     padding: 2em;
     margin: 1em;
-}
-
-.ForumFooter {
     position: fixed;
     margin: 2em;
     bottom: 0;
@@ -20,7 +17,7 @@
     flex-direction: column-reverse;
     justify-content: right;
     width: 45%;
-    padding: 2em;
+    padding: 1px;
 }
 
 .ForumEditForm {
@@ -29,6 +26,7 @@
     box-shadow: rgb(108, 108, 106);
     border-radius: 15px;
     padding: 2em;
+    margin-top: -30px;
     background-color: rgb(254, 255, 242);
 }
 
@@ -54,4 +52,8 @@
     padding: 6px;
     background-color: rgb(136, 185, 218);
     border-radius: 100px;
+}
+
+.ForumMessageField {
+    height: 100px;
 }

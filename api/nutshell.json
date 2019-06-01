@@ -3,13 +3,13 @@
     {
       "id": 1,
       "name": "Matthew",
-      "email": "user@email.com",
+      "email": "matthew@email.com",
       "password": "password"
     },
     {
       "id": 2,
-      "name": "Matssthew",
-      "email": "user@email.com",
+      "name": "Ellie",
+      "email": "ellie@email.com",
       "password": "test"
     },
     {
@@ -17,41 +17,39 @@
       "name": "Bryan",
       "email": "bryan@bryan.com",
       "password": "test"
+    },
+    {
+      "id": 4,
+      "name": "Keisha",
+      "email": "keisha@email.com",
+      "password": "test"
+    },
+    {
+      "id": 5,
+      "name": "Jimmy",
+      "email": "jimmy@email.com",
+      "password": "test"
     }
   ],
   "friends": [
     {
       "name": "Matthew",
       "id": 1
+    },
+    {
+      "name": "Ellie",
+      "id": 2
+    },
+    {
+      "name": "Keisha",
+      "id": 3
+    },
+    {
+      "name": "Jimmy",
+      "id": 4
     }
   ],
-  "forum": [
-    {
-      "userPosted": "Ellie",
-      "message": "hey gang whats goin on im just chilling in cedar rapids if u know what i mean ;)",
-      "id": 6
-    },
-    {
-      "userPosted": "Ellie",
-      "message": "what happens if i have a really long message like im talkin super long like what would happen? would it be fine or like totally not fine? im just trying to find out, find answers, and then i wanna KNOW the answer like REALLY know it and WHY and HOW and like ... yeah",
-      "id": 10
-    },
-    {
-      "id": 12,
-      "userPosted": "Ellie",
-      "message": "Hello Nutshell"
-    },
-    {
-      "userPosted": "Jimmy",
-      "message": "I think Keisha is a nerd",
-      "id": 13
-    },
-    {
-      "userId": "3",
-      "message": "get by session id",
-      "id": 14
-    }
-  ],
+  "forum": [],
   "news": [
     {
       "id": 8,
@@ -68,10 +66,10 @@
   ],
   "events": [
     {
-      "id": 103,
-      "eventName": "Birthday",
-      "eventDate": "2019-05-09",
-      "eventLocation": "Knoxville"
+      "eventName": "event",
+      "eventDate": "2019-05-18",
+      "eventLocation": "kdnckldc",
+      "id": 104
     }
   ],
   "tasks": [
