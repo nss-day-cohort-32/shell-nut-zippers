@@ -26,15 +26,17 @@ export default class Login extends Component {
         evt.preventDefault();
         if (this.state.email === ""){
             window.alert("Please sign in");
-        }else if(!matchUser){
+        } else if(!matchUser){
             window.alert("Email not found")
           } else {
         sessionStorage.setItem(
             "credentials",
             matchUser.id
             )
+        } if (matchUser) {
+            this.props.history.push("/forum");
+            window.alert(`${matchUser.id}`)
         }
-        
     }
 
 
