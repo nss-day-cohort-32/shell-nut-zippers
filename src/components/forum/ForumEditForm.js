@@ -20,6 +20,7 @@ export default class ForumEditForm extends Component {
         if (this.state.userPosted === "") {
           window.alert("Don't forget to define the user!");
         } else {
+          
           const editedMessage = {
             userId: sessionStorage.getItem("credentials"),
             id: this.props.match.params.forumId,

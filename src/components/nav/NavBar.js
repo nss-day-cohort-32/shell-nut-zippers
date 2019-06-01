@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
+import { Route } from 'react-router-dom'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./NavBar.css"
 import NutLogo from "./NutLogo.svg"
@@ -30,7 +31,9 @@ export default class NavBar extends Component {
                     </li>
                 </ul>
                 <h1 className="navTitle"> Nutshell </h1>
-                   <img src={NutLogo} alt="Nutshell" className="NutLogo" onClick={()=> this.props.history.push("/login")}></img>
+                <Route render={({ history}) => (
+                   <img src={NutLogo} alt="Nutshell" className="NutLogo" onClick={()=> history.push("/login")}></img>
+                   )} />
             </nav>
         )
     }

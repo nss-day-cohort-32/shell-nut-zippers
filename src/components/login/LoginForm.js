@@ -27,18 +27,14 @@ export default class Login extends Component {
         if (this.state.email === ""){
             window.alert("Please sign in");
         }else if(!matchUser){
-            window.alert("EMAIL NOT FOUND")
+            window.alert("Email not found")
           } else {
         sessionStorage.setItem(
             "credentials",
             matchUser.id
-            // JSON.stringify({
-            //     email: this.state.email,
-            //     password: this.state.password
-            // })
             )
-            // .then(this.props.history.push("/forum"))
         }
+        
     }
 
 
