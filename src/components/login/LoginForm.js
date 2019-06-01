@@ -31,11 +31,11 @@ export default class Login extends Component {
           } else {
         sessionStorage.setItem(
             "credentials",
-            matchUser.id
+            matchUser.name
             )
         } if (matchUser) {
             this.props.history.push("/forum");
-            window.alert(`${matchUser.id}`)
+            window.alert(`Welcome back ${matchUser.name}!`)
         }
     }
 
