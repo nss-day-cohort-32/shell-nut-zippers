@@ -36,7 +36,7 @@ export default class Login extends Component {
             "credentials",
             matchUser.name,
             )
-        } if (matchUser) {
+        } if(matchUser) {
             this.props.history.push("/forum");
             window.alert(`Welcome back ${matchUser.name}!`)
         }
@@ -47,7 +47,7 @@ export default class Login extends Component {
         return (
             <form
             className="LoginForm">
-                <h1 className="Welcome">Welcome</h1>
+                <h1 className="">Login</h1>
                 <label htmlFor="inputEmail">
                     Email address:
                 </label>
@@ -67,7 +67,14 @@ export default class Login extends Component {
                 <button type="submit"
                 className="btn btn-primary LoginSubmit"
                 onClick={this.handleLogin}>
-                    Sign In
+                    Login
+                </button>
+                <br></br>
+                <p> Don't have an account? </p>
+                <button
+                className="btn btn-primary"
+                onClick={() => this.props.history.push("/")}>
+                    Register
                 </button>
             </form>
         )

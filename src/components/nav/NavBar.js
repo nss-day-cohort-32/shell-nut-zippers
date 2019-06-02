@@ -32,6 +32,9 @@ export default class NavBar extends Component {
                     <li className="nav-item">
                         <Link className="nav-link" to="/friends">Friends</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/" onClick={()=> sessionStorage.clear()}>Logout</Link>
+                    </li>
                 </ul>
                 <h1 className="navTitle"> Nutshell </h1>
                 <Route render={({ history}) => (

@@ -14,11 +14,13 @@ body {
 .btn-success {
     background-color: rgb(90, 157, 90);
     border-color: rgb(90, 157, 90);
+    font-size: 20px;
 }
 
 .btn-primary {
     background-color: rgb(20, 129, 218);
     border-color: rgb(20, 129, 218);
+    font-size: 20px;
 }
 
 .btn-primary:hover {
@@ -27,4 +29,12 @@ body {
 
 .btn-success:hover {
     background-color: rgb(65, 126, 79);
+}
+
+.RegisterWelcome {
+    box-shadow: rgb(108, 108, 106);
+    border-radius: 15px;
+    padding: 2em;
+    margin-bottom: 15em;
+    background-color: rgb(254, 255, 242);
 }

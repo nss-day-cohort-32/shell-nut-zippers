@@ -31,10 +31,40 @@
       "password": "test"
     },
     {
-      "name": "user",
-      "email": "user@email.com",
+      "name": "me",
+      "email": "me@email.com",
       "password": "test",
       "id": 6
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 7
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 8
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 9
+    },
+    {
+      "name": "Ellie",
+      "email": "ellie@email.com",
+      "password": "test",
+      "id": 10
+    },
+    {
+      "name": "ellie",
+      "email": "cccc",
+      "password": "test",
+      "id": 11
     }
   ],
   "friends": [

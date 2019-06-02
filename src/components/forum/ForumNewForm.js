@@ -50,6 +50,10 @@ export default class ForumNewForm extends Component {
             />
           </div> */}
           <div className="form-group">
+          <label htmlFor="NewMessage">
+                    Message:
+                </label>
+                <br></br>
             <input
               type="text"
               size="30"

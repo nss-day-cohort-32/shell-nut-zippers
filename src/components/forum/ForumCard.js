@@ -24,7 +24,7 @@ export default class EventsCard extends Component {
                        this.props.forum.map(forum =>
                         <div key={forum.id} className="ForumHistory">
                             <img src={UserIcon} alt="User" className="ForumIcon"/>
-                            <p className="ForumUser"> * {forum.userId}</p>
+                            <p className="ForumUser"> {forum.userId}</p>
                             <hr></hr>
                             {forum.message}
                             <hr></hr>

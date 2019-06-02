@@ -3,7 +3,7 @@
     padding: 2em;
     margin: 1em;
     position: fixed;
-    margin: 2em;
+    margin: 3px 3px 3px 40px;
     bottom: 0;
     float: left;
     box-shadow: rgb(108, 108, 106);
@@ -38,7 +38,7 @@
     border-radius: 15px;
     padding: 2em;
     background-color: rgb(220, 236, 247);
-    margin: 3px;
+    margin: 3px 40px 3px 3px;
 }
 
 .ForumHistoryBtn {
@@ -56,4 +56,8 @@
 
 .ForumMessageField {
     height: 100px;
+}
+
+.ForumUser {
+    margin-left: 8px;
 }
