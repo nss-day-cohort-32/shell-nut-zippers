@@ -251,7 +251,7 @@ export default class AppViews extends Component {
                                 events={this.state.events}
                                 deleteEvents={this.deleteEvents} />
                         } else {
-                            return <Redirect to="/" />
+                            return <Redirect to="/login" />
                         }
                     }
                     } />
@@ -282,7 +282,7 @@ export default class AppViews extends Component {
                                 tasks={this.state.tasks}
                                 deleteTasks={this.deleteTasks} />
                         } else {
-                            return <Redirect to="/" />
+                            return <Redirect to="/login" />
                         }
                     }
                     } />
@@ -313,7 +313,7 @@ export default class AppViews extends Component {
                                 news={this.state.news}
                                 deleteNews={this.deleteNews} />
                         } else {
-                            return <Redirect to="/" />
+                            return <Redirect to="/login" />
                         }
                     }
                     } />
@@ -344,7 +344,7 @@ export default class AppViews extends Component {
                             forum = {this.state.forum}
                             deleteMessages = {this.deleteMessages}/>
                         } else {
-                            return <Redirect to = "/" />
+                            return <Redirect to = "/login" />
                         }
                     }
                 }/>
@@ -380,7 +380,7 @@ export default class AppViews extends Component {
                         friends={this.state.friends} 
                         deleteFriend={this.deleteFriend}  />;
                     } else {
-                        return <Redirect to = "/" />}
+                        return <Redirect to = "/login" />}
                     } 
                 }/>
 

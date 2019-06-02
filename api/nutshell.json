@@ -7,12 +7,6 @@
       "password": "test"
     },
     {
-      "id": 2,
-      "name": "Ellie",
-      "email": "ellie@email.com",
-      "password": "test"
-    },
-    {
       "id": 3,
       "name": "Bryan",
       "email": "bryan@bryan.com",
@@ -31,40 +25,16 @@
       "password": "test"
     },
     {
-      "name": "me",
-      "email": "me@email.com",
+      "name": "ellie",
+      "email": "ellie@email.com",
       "password": "test",
       "id": 6
     },
     {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 7
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 8
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 9
-    },
-    {
-      "name": "Ellie",
-      "email": "ellie@email.com",
-      "password": "test",
-      "id": 10
-    },
-    {
       "name": "ellie",
-      "email": "cccc",
+      "email": "user@email.com",
       "password": "test",
-      "id": 11
+      "id": 7
     }
   ],
   "friends": [

@@ -32,9 +32,11 @@ body {
 }
 
 .RegisterWelcome {
+    float: left;
+    width: 40%;
     box-shadow: rgb(108, 108, 106);
     border-radius: 15px;
     padding: 2em;
-    margin-bottom: 15em;
+    margin: 2em;
     background-color: rgb(254, 255, 242);
 }
