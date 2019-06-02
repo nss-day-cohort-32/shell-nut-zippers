@@ -11,15 +11,12 @@
       "name": "Matssthew",
       "email": "user@email.com",
       "password": "test"
-<<<<<<< HEAD
-=======
     },
     {
       "id": 3,
       "name": "Bryan",
       "email": "bryan@bryan.com",
       "password": "test"
->>>>>>> master
     }
   ],
   "friends": [
@@ -36,15 +33,6 @@
   "forum": [
     {
       "userPosted": "Ellie",
-<<<<<<< HEAD
-      "message": "Whats Up!!!",
-      "id": 2
-    },
-    {
-      "userPosted": "yaya",
-      "message": "hi",
-      "id": 3
-=======
       "message": "hey gang whats goin on im just chilling in cedar rapids if u know what i mean ;)",
       "id": 6
     },
@@ -67,7 +55,6 @@
       "userId": "3",
       "message": "get by session id",
       "id": 14
->>>>>>> master
     }
   ],
   "news": [
@@ -106,53 +93,49 @@
       "id": 65
     },
     {
-      "complete": 1,
+      "userId": 1,
+      "complete": 0,
       "taskName": "holy shit cool stuff",
       "completeDate": "2019-06-07",
       "id": 66
     },
     {
-      "complete": 1,
+      "userId": 2,
+      "complete": 0,
       "taskName": "polish shoes",
       "completeDate": "2020-03-04",
       "id": 67
     },
     {
-      "complete": 1,
+      "userId": 2,
+      "complete": 0,
       "taskName": "hide this task!",
       "completeDate": "2020-05-06",
       "id": 68
     },
     {
-      "complete": 1,
+      "userId": 1,
+      "complete": 0,
       "taskName": "aoiejfioaje",
       "completeDate": "2200-02-02",
       "id": 69
     },
     {
-      "id": 70,
-      "taskName": "stufflepuff",
-      "completeDate": "3030-02-02"
-    },
-    {
-      "complete": 1,
+      "userId": 2,
+      "complete": 0,
       "taskName": "check that checkbox again dude",
       "completeDate": "2019-05-31",
       "id": 71
     },
     {
-<<<<<<< HEAD
+      "userId": 2,
       "complete": 0,
-      "taskName": "hh",
-      "completeDate": "2019-05-28",
-=======
-      "complete": 1,
       "taskName": "Push to github",
       "completeDate": "2019-05-13",
->>>>>>> master
       "id": 72
     },
     {
+      "userId": 1,
       "complete": 0,
       "taskName": "Push to GitHub",
       "completeDate": "2019-05-07",
