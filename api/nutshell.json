@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Matthew",
       "email": "matthew@email.com",
-      "password": "password"
+      "password": "test"
     },
     {
       "id": 2,
@@ -49,24 +49,12 @@
       "id": 4
     }
   ],
-  "forum": [
-    {
-      "userId": "Bryan",
-      "id": 1,
-      "message": "HEllo"
-    }
-  ],
+  "forum": [],
   "news": [
     {
       "id": 8,
       "newsTitle": "'Slow-motion disaster'",
       "newsSynopsis": "Arkansas River: Every large community will see major flooding within 7-10 days",
-      "newsUrl": ""
-    },
-    {
-      "id": 9,
-      "newsTitle": "The 100 absolute best songs in history",
-      "newsSynopsis": "100. \"Kung Fu Fighting\" • Artist: Carl Douglas • Year: 1974 • Total weeks on Billboard Hot 100: 18 • ",
       "newsUrl": ""
     }
   ],

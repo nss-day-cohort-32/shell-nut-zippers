@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import "./Login.css"
 
 
+
 export default class Login extends Component {
 
     state = {
@@ -20,18 +21,20 @@ export default class Login extends Component {
         console.log(this.props.users)
         let allUsers = this.props.users
         let inputEmail = this.state.email
-        let matchUser = allUsers.find(user => user.email === inputEmail)
+        let inputPassword = this.state.password
+        let matchUser = allUsers.find(user => user.email === inputEmail && user.password === inputPassword)
         console.log(this.state.email)
         // console.log("matchUsers", matchUser.id)
         evt.preventDefault();
-        if (this.state.email === ""){
+        if (this.state.email | this.state.password === ""){
             window.alert("Please sign in");
-        } else if(!matchUser){
-            window.alert("Email not found")
+        }
+        else if(!matchUser){
+            window.alert("User not found");
           } else {
         sessionStorage.setItem(
             "credentials",
-            matchUser.name
+            matchUser.name,
             )
         } if (matchUser) {
             this.props.history.push("/forum");

@@ -23,6 +23,8 @@ export default class ForumNewForm extends Component {
           const forum = {
             userId: sessionStorage.getItem("credentials"),
             message: this.state.message,
+            id: this.props.match.params.forumId,
+            userPosted: this.state.userPosted,
           };
     
           this.props

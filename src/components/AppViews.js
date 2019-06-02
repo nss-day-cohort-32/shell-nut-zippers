@@ -147,9 +147,9 @@ export default class AppViews extends Component {
         })
     );
 
-    deleteMessages = (id) => {
+    deleteMessages = (forum) => {
         const newState = {};
-        DbCalls.deleteMessages(id)
+        DbCalls.deleteMessages(forum)
         .then(DbCalls.getAllMessages)
         .then(forum => 
             {newState.forum = forum})
