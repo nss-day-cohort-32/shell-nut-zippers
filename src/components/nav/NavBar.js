@@ -33,7 +33,7 @@ export default class NavBar extends Component {
                         <Link className="nav-link" to="/friends">Friends</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/" onClick={()=> sessionStorage.clear()}>Logout</Link>
+                        <Link className="nav-link" to="/login" onClick={()=> sessionStorage.clear()}>Logout</Link>
                     </li>
                 </ul>
                 <h1 className="navTitle"> Nutshell </h1>
