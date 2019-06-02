@@ -1,5 +1,6 @@
 .LoginForm {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
     padding: 2em;
@@ -8,3 +9,4 @@
     border-radius: 15px;
     background-color: rgb(253, 254, 245);
 }
+
