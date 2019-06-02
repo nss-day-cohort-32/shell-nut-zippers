@@ -23,7 +23,9 @@ export default class TasksEditForm extends Component {
             const editedTask = {
                 id: this.props.match.params.taskId,
                 taskName: this.state.taskName,
-                completeDate: this.state.completeDate
+                completeDate: this.state.completeDate,
+                userId: parseInt(sessionStorage.getItem("credentials")),
+                complete: 0
             };
 
             this.props.putTask(editedTask)
