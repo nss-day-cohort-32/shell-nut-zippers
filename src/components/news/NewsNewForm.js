@@ -56,12 +56,6 @@ export default class NewsNewForm extends Component {
               id="newsSynopsis"
               placeholder="Synopsis"
             />
-
-
-
-            THIS IS WHERE I STOPPED
-
-            
           </div>
           <div className="form-group">
             <label htmlFor="NewsUrl">News Url</label>
