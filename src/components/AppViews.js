@@ -17,6 +17,7 @@ import NewsEditForm from "./news/NewsEditForm"
 import ForumCard from "./forum/ForumCard"
 import ForumEditForm from "./forum/ForumEditForm"
 import ForumNewForm from "./forum/ForumNewForm"
+import Home from "./Home"
 
 
 
@@ -31,6 +32,15 @@ export default class AppViews extends Component {
         users: [],
         friends: []
     };
+
+    addUser = (user) => 
+        DbCalls.postNewUser(user)
+        .then(() => DbCalls.getAllUsers())
+        .then(users => 
+            this.setState({
+                users: users
+            })
+        );
 
     searchResults = (names) =>
         DbCalls.SearchUsers(names)
@@ -147,9 +157,9 @@ export default class AppViews extends Component {
         })
     );
 
-    deleteMessages = (id) => {
+    deleteMessages = (forum) => {
         const newState = {};
-        DbCalls.deleteMessages(id)
+        DbCalls.deleteMessages(forum)
         .then(DbCalls.getAllMessages)
         .then(forum => 
             {newState.forum = forum})
@@ -214,6 +224,15 @@ export default class AppViews extends Component {
     render() {
         return (
             <React.Fragment >
+                <Route exact path="/"
+                    render={(props) => {
+                        return <Home {
+                            ...props
+                        }
+                        users={this.state.users}
+                        addUser={this.addUser}/>
+                    }
+                } />
 
                 <Route exact path="/login" 
                     render={(props) => {
@@ -303,7 +322,7 @@ export default class AppViews extends Component {
                         return <NewNewsForm {
                             ...props
                         }
-                            News={this.state.news}
+                            news={this.state.news}
                             addNews={this.addNews} />
                     }
                     } />
@@ -354,11 +373,16 @@ export default class AppViews extends Component {
 
                 <Route exact path="/friends"
                     render={(props) => {
-                        return <FriendsCard friends={this.state.friends} deleteFriend={this.deleteFriend} {
+                        if (this.isAuthenticated()) {
+                        return <FriendsCard {
                             ...props
-                        } />;
-                    }
-                    } />
+                        }
+                        friends={this.state.friends} 
+                        deleteFriend={this.deleteFriend}  />;
+                    } else {
+                        return <Redirect to = "/login" />}
+                    } 
+                }/>
 
                 <Route path="/friends/search"
                     render={(props) => {

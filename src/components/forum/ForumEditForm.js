@@ -17,18 +17,19 @@ export default class ForumEditForm extends Component {
 
     updateExistingMessage = evt => {
         evt.preventDefault()
-        if (this.state.userPosted === "") {
-          window.alert("Don't forget to define the user!");
-        } else {
+        
+          
           const editedMessage = {
+            userId: sessionStorage.getItem("credentials"),
             id: this.props.match.params.forumId,
             userPosted: this.state.userPosted,
             message: this.state.message,
+
           };
   
       this.props.putMessages(editedMessage)
       .then(() => this.props.history.push("/forum"))      
-      }
+    
     }
   
 

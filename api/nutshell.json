@@ -3,13 +3,7 @@
     {
       "id": 1,
       "name": "Matthew",
-      "email": "user@email.com",
-      "password": "password"
-    },
-    {
-      "id": 2,
-      "name": "Matssthew",
-      "email": "user@email.com",
+      "email": "matthew@email.com",
       "password": "test"
     },
     {
@@ -17,117 +11,65 @@
       "name": "Bryan",
       "email": "bryan@bryan.com",
       "password": "test"
+    },
+    {
+      "id": 4,
+      "name": "Keisha",
+      "email": "keisha@email.com",
+      "password": "test"
+    },
+    {
+      "id": 5,
+      "name": "Jimmy",
+      "email": "jimmy@email.com",
+      "password": "test"
+    },
+    {
+      "name": "ellie",
+      "email": "ellie@email.com",
+      "password": "test",
+      "id": 6
+    },
+    {
+      "name": "ellie",
+      "email": "user@email.com",
+      "password": "test",
+      "id": 7
     }
   ],
   "friends": [
     {
       "name": "Matthew",
       "id": 1
+    },
+    {
+      "name": "Jimmy",
+      "id": 4
     }
   ],
-  "forum": [
-    {
-      "userPosted": "Ellie",
-      "message": "hey gang whats goin on im just chilling in cedar rapids if u know what i mean ;)",
-      "id": 6
-    },
-    {
-      "userPosted": "Ellie",
-      "message": "what happens if i have a really long message like im talkin super long like what would happen? would it be fine or like totally not fine? im just trying to find out, find answers, and then i wanna KNOW the answer like REALLY know it and WHY and HOW and like ... yeah",
-      "id": 10
-    },
-    {
-      "id": 12,
-      "userPosted": "Ellie",
-      "message": "Hello Nutshell"
-    },
-    {
-      "userPosted": "Jimmy",
-      "message": "I think Keisha is a nerd",
-      "id": 13
-    },
-    {
-      "userId": "3",
-      "message": "get by session id",
-      "id": 14
-    }
-  ],
+  "forum": [],
   "news": [
     {
       "id": 8,
       "newsTitle": "'Slow-motion disaster'",
       "newsSynopsis": "Arkansas River: Every large community will see major flooding within 7-10 days",
       "newsUrl": ""
-    },
-    {
-      "id": 9,
-      "newsTitle": "The 100 absolute best songs in history",
-      "newsSynopsis": "100. \"Kung Fu Fighting\" • Artist: Carl Douglas • Year: 1974 • Total weeks on Billboard Hot 100: 18 • ",
-      "newsUrl": ""
     }
   ],
   "events": [
     {
-      "id": 103,
-      "eventName": "Birthday",
-      "eventDate": "2019-05-09",
-      "eventLocation": "Knoxville"
+      "eventName": "Present Nutshell to the Class",
+      "eventDate": "2019-06-03",
+      "eventLocation": "Nashville Software School",
+      "id": 1
     }
   ],
   "tasks": [
     {
-      "complete": 1,
-      "taskName": "hide me",
-      "completeDate": "2019-05-03",
-      "id": 65
-    },
-    {
-      "complete": 1,
-      "taskName": "holy shit cool stuff",
-      "completeDate": "2019-06-07",
-      "id": 66
-    },
-    {
-      "complete": 1,
-      "taskName": "polish shoes",
-      "completeDate": "2020-03-04",
-      "id": 67
-    },
-    {
-      "complete": 1,
-      "taskName": "hide this task!",
-      "completeDate": "2020-05-06",
-      "id": 68
-    },
-    {
-      "complete": 1,
-      "taskName": "aoiejfioaje",
-      "completeDate": "2200-02-02",
-      "id": 69
-    },
-    {
-      "complete": 1,
-      "taskName": "stuff",
-      "completeDate": "3030-02-02",
-      "id": 70
-    },
-    {
-      "complete": 1,
-      "taskName": "check that checkbox again dude",
-      "completeDate": "2019-05-31",
-      "id": 71
-    },
-    {
-      "complete": 1,
-      "taskName": "Push to github",
-      "completeDate": "2019-05-13",
-      "id": 72
-    },
-    {
       "complete": 0,
-      "taskName": "Push to GitHub",
-      "completeDate": "2019-05-07",
-      "id": 73
+      "taskName": "Push to Github",
+      "completeDate": "2019-06-01",
+      "id": 1
     }
   ]
 }
