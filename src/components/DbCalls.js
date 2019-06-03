@@ -93,7 +93,7 @@ export default {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ complete: 1, taskName: taskName, completeDate: completeDate })
+      body: JSON.stringify({ complete: 1, taskName: taskName, completeDate: completeDate, userId: parseInt(sessionStorage.getItem("credentials")) })
     }).then(e => e.json());
   },
   deleteTasks(id) {
