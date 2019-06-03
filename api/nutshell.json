@@ -47,7 +47,14 @@
       "id": 4
     }
   ],
-  "forum": [],
+  "forum": [
+    {
+      "username": "Bryan",
+      "message": "im bryan",
+      "userPosted": "",
+      "id": 1
+    }
+  ],
   "news": [
     {
       "id": 8,

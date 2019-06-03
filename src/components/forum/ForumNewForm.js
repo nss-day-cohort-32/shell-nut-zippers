@@ -21,7 +21,7 @@ export default class ForumNewForm extends Component {
           window.alert("Don't forget to include a message!");
         } else {
           const forum = {
-            userId: sessionStorage.getItem("credentials"),
+            username: sessionStorage.getItem("credentials"),
             message: this.state.message,
             id: this.props.match.params.forumId,
             userPosted: this.state.userPosted,
