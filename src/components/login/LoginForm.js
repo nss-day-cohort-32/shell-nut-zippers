@@ -49,8 +49,7 @@ export default class Login extends Component {
             <div className="RegisterWelcome">
               <h1> Welcome to Nutshell! </h1>
               <br></br>
-              <p> We tell people sometimes: we're like drug dealers, come into town and get everybody absolutely addicted to painting. It doesn't take much to get you addicted. In your world you have total and absolute power. Zip. That easy. Without washing the brush, I'm gonna go right into some Van Dyke Brown, some Burnt Umber, and a little bit of Sap Green. These trees are so much fun. I get started on them and I have a hard time stopping. Let's do that again. Isn't that fantastic?
-              What the devil. Maybe there was an old trapper that lived out here and maybe one day he went to check his beaver traps, and maybe he fell into the river and drowned. We'll put a happy little bush here. Let's put a touch more of the magic here. You can spend all day playing with mountains. This is unplanned it really just happens.</p>
+              <p>This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so. And that's when it becomes fun - you don't have to spend your time thinking about what's happening - you just let it happen. Everyone is going to see things differently - and that's the way it should be. We'll throw some old gray clouds in here just sneaking around and having fun. We don't want to set these clouds on fire.</p>
               </div>
             <form
             className="LoginForm">
