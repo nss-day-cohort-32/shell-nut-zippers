@@ -47,7 +47,20 @@
       "id": 4
     }
   ],
-  "forum": [],
+  "forum": [
+    {
+      "userId": "Bryan",
+      "message": "You're meant to have fun in life. Now, we're going to fluff this cloud. Maybe there's a happy little bush that lives right there. I'm sort of a softy, I couldn't shoot Bambi except with a camera. Look around, look at what we have. Beauty is everywhere, you only have to look to see it. If what you're doing doesn't make you happy - you're doing the wrong thing. Don't be bashful drop me a line.",
+      "userPosted": "",
+      "id": 1
+    },
+    {
+      "userId": "Bryan",
+      "message": "Poor old tree. Very easy to work these to death. Didn't you know you had that much power? You can move mountains. You can do anything. It's a good way of getting rid of all your anxieties and hostilities. Happy painting, God bless.",
+      "userPosted": "",
+      "id": 2
+    }
+  ],
   "news": [
     {
       "id": 8,
