@@ -20,7 +20,7 @@ export default class ForumEditForm extends Component {
         
           
           const editedMessage = {
-            userId: sessionStorage.getItem("credentials"),
+            username: sessionStorage.getItem("credentials"),
             id: this.props.match.params.forumId,
             userPosted: this.state.userPosted,
             message: this.state.message,
