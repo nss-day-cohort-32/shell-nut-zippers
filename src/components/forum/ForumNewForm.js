@@ -17,12 +17,14 @@ export default class ForumNewForm extends Component {
     
       constructNewMessage = evt => {
         evt.preventDefault();
-        if (this.state.userPosted === "") {
-          window.alert("Don't forget to define the user!");
+        if (this.state.message === "") {
+          window.alert("Don't forget to include a message!");
         } else {
           const forum = {
             userId: sessionStorage.getItem("credentials"),
             message: this.state.message,
+            id: this.props.match.params.forumId,
+            userPosted: this.state.userPosted,
           };
     
           this.props
@@ -35,9 +37,8 @@ export default class ForumNewForm extends Component {
     render() {
         return (
             <React.Fragment>
-              <footer className="ForumFooter">
             <form className="NewForumForm">
-                <div className="form-group">
+                {/* <div className="form-group">
                 <label htmlFor="userPosted"> User </label>
                 <input type="text"
                 required
@@ -47,13 +48,17 @@ export default class ForumNewForm extends Component {
                 placeholder=""
                 // value={this.state.userPosted}
             />
-          </div>
+          </div> */}
           <div className="form-group">
-            <label htmlFor="message">Message</label>
+          <label htmlFor="NewMessage">
+                    Message:
+                </label>
+                <br></br>
             <input
               type="text"
+              size="30"
               required
-              className="form-control"
+              className="ForumMessageField"
               onChange={this.handleFieldChange}
               id="message"
               placeholder=""
@@ -67,7 +72,6 @@ export default class ForumNewForm extends Component {
             Send
           </button>
           </form>
-          </footer>
         </React.Fragment>
         )
     }

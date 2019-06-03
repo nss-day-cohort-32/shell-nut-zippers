@@ -3,13 +3,7 @@
     {
       "id": 1,
       "name": "Matthew",
-      "email": "user@email.com",
-      "password": "password"
-    },
-    {
-      "id": 2,
-      "name": "Matssthew",
-      "email": "user@email.com",
+      "email": "matthew@email.com",
       "password": "test"
     },
     {
@@ -32,29 +26,28 @@
   ],
   "forum": [
     {
-      "userPosted": "Ellie",
-      "message": "hey gang whats goin on im just chilling in cedar rapids if u know what i mean ;)",
+      "id": 4,
+      "name": "Keisha",
+      "email": "keisha@email.com",
+      "password": "test"
+    },
+    {
+      "id": 5,
+      "name": "Jimmy",
+      "email": "jimmy@email.com",
+      "password": "test"
+    },
+    {
+      "name": "ellie",
+      "email": "ellie@email.com",
+      "password": "test",
       "id": 6
     },
     {
-      "userPosted": "Ellie",
-      "message": "what happens if i have a really long message like im talkin super long like what would happen? would it be fine or like totally not fine? im just trying to find out, find answers, and then i wanna KNOW the answer like REALLY know it and WHY and HOW and like ... yeah",
-      "id": 10
-    },
-    {
-      "id": 12,
-      "userPosted": "Ellie",
-      "message": "Hello Nutshell"
-    },
-    {
-      "userPosted": "Jimmy",
-      "message": "I think Keisha is a nerd",
-      "id": 13
-    },
-    {
-      "userId": "3",
-      "message": "get by session id",
-      "id": 14
+      "name": "ellie",
+      "email": "user@email.com",
+      "password": "test",
+      "id": 7
     }
   ],
   "news": [
@@ -69,20 +62,14 @@
       "newsTitle": "'Slow-motion disaster'",
       "newsSynopsis": "Arkansas River: Every large community will see major flooding within 7-10 days",
       "newsUrl": ""
-    },
-    {
-      "id": 9,
-      "newsTitle": "The 100 absolute best songs in history",
-      "newsSynopsis": "100. \"Kung Fu Fighting\" • Artist: Carl Douglas • Year: 1974 • Total weeks on Billboard Hot 100: 18 • ",
-      "newsUrl": ""
     }
   ],
   "events": [
     {
-      "id": 103,
-      "eventName": "Birthday",
-      "eventDate": "2019-05-09",
-      "eventLocation": "Knoxville"
+      "eventName": "Present Nutshell to the Class",
+      "eventDate": "2019-06-03",
+      "eventLocation": "Nashville Software School",
+      "id": 1
     }
   ],
   "tasks": [

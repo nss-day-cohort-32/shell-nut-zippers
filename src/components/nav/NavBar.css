@@ -1,7 +1,7 @@
 .NutLogo {
     width: 60px;
     height: 60px;
-    margin: 5px 12px; 
+    margin: 5px 25px 5px; 
 }
 
 .navbar {
@@ -10,5 +10,5 @@
 
 .navTitle {
     align-self: flex-end;
-
+    margin-left: 10em;
 } 
